@@ -12,21 +12,25 @@ $student_query = $conn->query("SELECT * FROM student_profiles WHERE user_id = $u
 $student = ($student_query->num_rows > 0) ? $student_query->fetch_assoc() : null;
 
 $eligible_count = 0;
-if ($student) {
+// Only calculate eligibility if student exists and has filled out their profile minimums.
+if ($student && isset($student['cgpa']) && isset($student['course'])) {
     $sch_query = $conn->query("SELECT * FROM scholarships");
-    while ($sch = $sch_query->fetch_assoc()) {
+    while ($sch_query && $sch = $sch_query->fetch_assoc()) {
         $crit_query = $conn->query("SELECT * FROM scholarship_criteria WHERE scholarship_id = " . $sch['id']);
-        $crit = $crit_query->fetch_assoc();
+        $crit = ($crit_query) ? $crit_query->fetch_assoc() : null;
         
         $is_eligible = true;
         if ($crit) {
             if ($crit['minimum_cgpa'] > $student['cgpa']) $is_eligible = false;
-            if ($crit['required_course'] != 'Any' && $crit['required_course'] != $student['course']) $is_eligible = false;
-            if ($crit['required_state'] != 'Any' && $crit['required_state'] != $student['state_of_origin']) $is_eligible = false;
-            if ($crit['maximum_income'] > 0 && $crit['maximum_income'] < $student['family_income']) $is_eligible = false;
+            // Case-insensitive comparison for course and state
+            if (strtolower(trim($crit['required_course'])) != 'any' && strtolower(trim($crit['required_course'])) != strtolower(trim($student['course']))) $is_eligible = false;
+            if (strtolower(trim($crit['required_state'])) != 'any' && strtolower(trim($crit['required_state'])) != strtolower(trim($student['state_of_origin']))) $is_eligible = false;
+            if ($crit['maximum_income'] > 0 && $student['family_income'] > $crit['maximum_income']) $is_eligible = false;
         }
         
-        if ($is_eligible) $eligible_count++;
+        if ($is_eligible) {
+            $eligible_count++;
+        }
     }
 }
 ?>

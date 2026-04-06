@@ -27,16 +27,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($name) || empty($provider) || empty($deadline)) {
         $error = "Please fill all required fields.";
     } else {
+        // Escape strings to prevent syntax errors/SQL injection
+        $name        = $conn->real_escape_string($name);
+        $description = $conn->real_escape_string($description);
+        $provider    = $conn->real_escape_string($provider);
+        $deadline    = $conn->real_escape_string($deadline);
+        $req_course  = $conn->real_escape_string($req_course);
+        $req_state   = $conn->real_escape_string($req_state);
+
         // Insert scholarship using basic query
         $insert_scholarship = "INSERT INTO scholarships (name, description, amount, provider, deadline) VALUES ('$name', '$description', '$amount', '$provider', '$deadline')";
-        $conn->query($insert_scholarship);
-        $scholarship_id = $conn->insert_id;
+        if ($conn->query($insert_scholarship) === TRUE) {
+            $scholarship_id = $conn->insert_id;
 
-        // Insert criteria using basic query with new field names
-        $insert_criteria = "INSERT INTO scholarship_criteria (scholarship_id, minimum_cgpa, maximum_income, required_course, required_state) VALUES ('$scholarship_id', '$min_cgpa', '$max_income', '$req_course', '$req_state')";
-        $conn->query($insert_criteria);
-
-        $success = "Scholarship added successfully!";
+            // Insert criteria using basic query with new field names
+            $insert_criteria = "INSERT INTO scholarship_criteria (scholarship_id, minimum_cgpa, maximum_income, required_course, required_state) VALUES ('$scholarship_id', '$min_cgpa', '$max_income', '$req_course', '$req_state')";
+            if ($conn->query($insert_criteria) === TRUE) {
+                $success = "Scholarship added successfully!";
+            } else {
+                $error = "Scholarship added, but failed to save criteria: " . $conn->error;
+            }
+        } else {
+            $error = "Error adding scholarship: " . $conn->error;
+        }
     }
 }
 

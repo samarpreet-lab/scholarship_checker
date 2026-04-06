@@ -14,8 +14,8 @@ $error   = '';
 // Save profile
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cgpa      = floatval($_POST['cgpa']);
-    $course    = $_POST['course'];
-    $state     = $_POST['state'];
+    $course    = $conn->real_escape_string($_POST['course']);
+    $state     = $conn->real_escape_string($_POST['state']);
     $income    = intval($_POST['family_income']);
 
     // Validate CGPA range
@@ -25,8 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "All fields are required.";
     } else {
         $update_query = "UPDATE student_profiles SET cgpa='$cgpa', course='$course', state_of_origin='$state', family_income='$income' WHERE user_id='$user_id'";
-        $conn->query($update_query);
-        $success = "Profile updated successfully.";
+        if ($conn->query($update_query) === TRUE) {
+            $success = "Profile updated successfully.";
+        } else {
+            $error = "Error updating profile: " . $conn->error;
+        }
     }
 }
 

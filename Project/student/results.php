@@ -49,11 +49,11 @@ $sch_result = $conn->query($sch_query);
                 $is_eligible = false;
                 $reasons[] = "CGPA requirement: " . $criteria['minimum_cgpa'];
             }
-            if ($criteria['required_course'] !== 'Any' && $criteria['required_course'] !== $profile['course']) {
+            if (strtolower(trim($criteria['required_course'])) !== 'any' && strtolower(trim($criteria['required_course'])) !== strtolower(trim($profile['course']))) {
                 $is_eligible = false;
                 $reasons[] = "Program requirement: " . $criteria['required_course'];
             }
-            if ($criteria['required_state'] !== 'Any' && $criteria['required_state'] !== $profile['state_of_origin']) {
+            if (strtolower(trim($criteria['required_state'])) !== 'any' && strtolower(trim($criteria['required_state'])) !== strtolower(trim($profile['state_of_origin']))) {
                 $is_eligible = false;
                 $reasons[] = "State requirement: " . $criteria['required_state'];
             }

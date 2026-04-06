@@ -5,11 +5,15 @@ require_once 'config/db.php';
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email    = $_POST['email'];
+    $email    = trim(strtolower($_POST['email']));
     $password = $_POST['password'];
 
+    // Escape strings to prevent SQL injection
+    $safe_email    = $conn->real_escape_string($email);
+    $safe_password = $conn->real_escape_string($password);
+
     // Fetch user by using simple Query
-    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $query = "SELECT * FROM users WHERE email = '$safe_email' AND password = '$safe_password'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
