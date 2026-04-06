@@ -190,7 +190,6 @@ if ($is_authenticated && !$is_auth_page):
                 <div class="d-none d-lg-flex gap-4">
                     <a href="<?php echo $base; ?>student/dashboard.php" class="text-decoration-none fw-semibold" style="color: #495057; font-size: 0.95rem;">Dashboard</a>
                     <a href="<?php echo $base; ?>student/results.php" class="text-decoration-none fw-semibold" style="color: #495057; font-size: 0.95rem;">Scholarships</a>
-                    <a href="#" class="text-decoration-none fw-semibold" style="color: #495057; font-size: 0.95rem;">Resources</a>
                 </div>
             <?php else: ?>
                 <div class="d-none d-lg-flex gap-4">
@@ -227,7 +226,6 @@ if ($is_authenticated && !$is_auth_page):
     <ul class="sidebar-menu">
         <li><a href="<?php echo $base; ?>student/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Dashboard</a></li>
         <li><a href="<?php echo $base; ?>student/results.php" class="<?php echo ($current_page === 'results.php') ? 'active' : ''; ?>"><i class="bi bi-check-circle-fill"></i>Eligibility</a></li>
-        <li><a href="#" class="<?php echo ($current_page === 'saved.php') ? 'active' : ''; ?>"><i class="bi bi-bookmark-fill"></i>Saved</a></li>
         <li><a href="<?php echo $base; ?>student/profile.php" class="<?php echo ($current_page === 'profile.php') ? 'active' : ''; ?>"><i class="bi bi-person-circle"></i>Profile</a></li>
     </ul>
 </aside>
