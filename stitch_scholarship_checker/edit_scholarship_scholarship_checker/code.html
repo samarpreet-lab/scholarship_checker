@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e7e7f0",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-tertiary-container": "#ffaa8a",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf8ff",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "tertiary": "#651f00",
+                        "secondary-container": "#d5e3fc",
+                        "primary": "#063669",
+                        "on-background": "#191b22",
+                        "primary-fixed": "#d5e3ff",
+                        "on-tertiary-fixed-variant": "#802900",
+                        "inverse-surface": "#2e3037",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#274e82",
+                        "on-surface-variant": "#434653",
+                        "on-secondary-container": "#57657a",
+                        "outline-variant": "#c3c6d5",
+                        "inverse-primary": "#a7c8ff",
+                        "on-error-container": "#93000a",
+                        "background": "#faf8ff",
+                        "secondary-fixed": "#d5e3fc",
+                        "tertiary-container": "#8b2e01",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-dim": "#d9d9e2",
+                        "outline": "#737784",
+                        "surface-container": "#ededf6",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-surface": "#191b22",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-bright": "#faf8ff",
+                        "inverse-on-surface": "#f0f0f9",
+                        "on-primary-container": "#9cc0fb",
+                        "surface-variant": "#e2e2eb",
+                        "surface-container-low": "#f3f3fc",
+                        "surface-container-highest": "#e2e2eb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#3a5f94",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#515f74",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf8ff] dark:bg-slate-950 flex justify-between items-center px-8 h-16 w-full bg-[#ededf6] dark:bg-slate-900">
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-[#191b22] dark:text-white tracking-tight">Scholarship Portal Admin</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-6 items-center">
+<span class="cursor-pointer active:scale-95 transition-transform text-[#191b22]/70 dark:text-slate-400 hover:bg-[#ededf6] dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded font-['Manrope'] font-bold text-lg">System Health</span>
+<span class="cursor-pointer active:scale-95 transition-transform text-[#0047AB] font-bold border-b-2 border-[#0047AB] px-3 py-1 font-['Manrope'] text-lg">Scholarship Editor</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer text-[#191b22]/70">notifications</span>
+<span class="material-symbols-outlined cursor-pointer text-[#191b22]/70">settings</span>
+<div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male administrator in a clean office setting, sharp focus, academic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRyHnCqQmDhfq3RhVsFvt-Or2-UpTjeKnlnSWh0GctYpPu15SwEyNTdMnDwXQBfoLbZWrDCGrHmbvc0x-4Kk3MaDRhugj-q56g9EZz6lsXWateyZN7EccbVN4fzHAO0Y21dlY-TuTDF-HDYmy63EY2Sk6HuZDx3PeVeCkKanGfEG41fWrDYp_7lCZV_YMkXsKHtvjMoAZuuQvWm38Cg3LBbXMHhH_ipykHu8Bi9w-LcamuPhCr-iNLz6pAH05M75mUrvHG1udEZ7k"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 border-r border-[#c3c6d5]/15 bg-[#faf8ff] dark:bg-slate-950 flex flex-col p-4 gap-2">
+<div class="mb-8 px-2">
+<h2 class="font-['Manrope'] font-extrabold text-[#191b22] dark:text-white text-lg">Admin Panel</h2>
+<p class="text-xs text-[#191b22]/60">Editorial Control</p>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-[#0047AB] text-white rounded-md shadow-sm hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">edit_note</span> Scholarship Editor
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">rule</span> Criteria Builder
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">history_edu</span> Document Logs
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">group</span> User Management
+            </a>
+</div>
+<div class="mt-auto space-y-1 pt-4 border-t border-[#c3c6d5]/15">
+<a class="flex items-center gap-3 px-4 py-2 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help</span> Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#191b22]/80 dark:text-slate-300 hover:bg-[#ededf6] rounded-md font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 lg:p-12 min-h-screen max-w-7xl">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<nav class="flex items-center gap-2 text-sm text-outline mb-4">
+<span>Scholarships</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-semibold">Edit Award</span>
+</nav>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Edit Scholarship</h1>
+<p class="text-on-surface-variant body-lg">Managing: <span class="font-bold text-primary">Merit Excellence Award (2024-25)</span></p>
+</div>
+<div>
+<button class="group flex items-center gap-2 px-6 py-2.5 border border-error/20 text-error font-semibold rounded-md hover:bg-error-container/30 transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">delete_forever</span>
+                    Delete Scholarship
+                </button>
+</div>
+</header>
+<form class="space-y-12">
+<!-- Basic Information Card -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<aside class="space-y-2">
+<h2 class="text-xl font-bold tracking-tight text-on-surface">General Information</h2>
+<p class="text-sm text-on-surface-variant leading-relaxed">Fundamental details about the scholarship provider and identification.</p>
+</aside>
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_24px_rgba(25,27,34,0.04)] space-y-8">
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">Scholarship Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors" type="text" value="Merit Excellence Award"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">Description</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors" rows="4">The Merit Excellence Award aims to support top-performing students from financially constrained backgrounds. This award provides comprehensive tuition assistance for undergraduate studies in STEM fields.</textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">Provider / Institution</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors" type="text" value="Global Educational Trust"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">Application Deadline</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors" type="date" value="2024-11-30"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2">Scholarship Amount (₹)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-semibold">₹</span>
+<input class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface pl-8 pr-4 py-3 transition-colors" type="text" value="1,50,000"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Eligibility Criteria Card -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<aside class="space-y-2">
+<h2 class="text-xl font-bold tracking-tight text-on-surface">Eligibility Criteria</h2>
+<p class="text-sm text-on-surface-variant leading-relaxed">Define the academic and demographic filters for the applicant pool.</p>
+</aside>
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_24px_rgba(25,27,34,0.04)] space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">Minimum GPA / Percentage</label>
+<div class="flex items-center gap-4">
+<input class="w-full h-1 bg-surface-container-high rounded-full appearance-none accent-primary cursor-pointer" max="100" min="0" type="range" value="85"/>
+<span class="text-primary font-bold text-lg min-w-[3rem]">85%</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-3">Max Annual Family Income (₹)</label>
+<input class="w-full bg-surface-container-high border-none rounded-t-DEFAULT border-b-2 border-transparent focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors" type="text" value="6,00,000"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">Eligible Categories</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-medium text-sm">General</span>
+</label>
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-medium text-sm">OBC</span>
+</label>
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-medium text-sm">SC</span>
+</label>
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-medium text-sm">ST</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">Gender Requirement</label>
+<div class="flex flex-wrap gap-4">
+<label class="flex items-center gap-2 group cursor-pointer">
+<input checked="" class="hidden peer" name="gender" type="radio" value="all"/>
+<div class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all">All Genders</div>
+</label>
+<label class="flex items-center gap-2 group cursor-pointer">
+<input class="hidden peer" name="gender" type="radio" value="female"/>
+<div class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all">Female Only</div>
+</label>
+<label class="flex items-center gap-2 group cursor-pointer">
+<input class="hidden peer" name="gender" type="radio" value="male"/>
+<div class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all">Male Only</div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Footer Actions -->
+<div class="mt-16 flex items-center justify-end gap-4 pb-12">
+<button class="px-8 py-3 text-primary font-bold hover:bg-surface-container-low rounded-md transition-colors" type="button">Cancel</button>
+<button class="px-10 py-3 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-md shadow-lg shadow-primary/20 hover:translate-y-[-2px] active:scale-95 transition-all" type="submit">Save Changes</button>
+</div>
+</form>
+<!-- Decorative Academic Element (Ghost Card) -->
+<div class="mt-12 p-8 border border-outline-variant border-opacity-15 rounded-xl bg-surface-container-low/30 italic text-on-surface-variant/70 text-center">
+<p>"Education is the most powerful weapon which you can use to change the world." — Nelson Mandela</p>
+</div>
+</main>
+<!-- Floating Helper for Admin -->
+<div class="fixed bottom-8 right-8 flex flex-col items-end gap-3 pointer-events-none">
+<div class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full pointer-events-auto shadow-xl">
+            Auto-save: Enabled
+        </div>
+<button class="pointer-events-auto h-14 w-14 rounded-full bg-primary flex items-center justify-center text-white shadow-[0px_8px_24px_rgba(6,54,105,0.4)] active:scale-90 transition-transform">
+<span class="material-symbols-outlined">support_agent</span>
+</button>
+</div>
+</body></html>

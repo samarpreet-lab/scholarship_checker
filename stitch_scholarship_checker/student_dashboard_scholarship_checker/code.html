@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Dashboard | Academic Editorial Scholarship Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e2e2eb",
+                      "on-secondary-container": "#57657a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#802900",
+                      "on-surface": "#191b22",
+                      "outline": "#737784",
+                      "primary-fixed-dim": "#a7c8ff",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "tertiary-fixed": "#ffdbcf",
+                      "on-surface-variant": "#434653",
+                      "on-background": "#191b22",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f0f0f9",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#3a5f94",
+                      "surface-bright": "#faf8ff",
+                      "secondary": "#515f74",
+                      "inverse-primary": "#a7c8ff",
+                      "inverse-surface": "#2e3037",
+                      "background": "#faf8ff",
+                      "surface-container-high": "#e7e7f0",
+                      "primary-fixed": "#d5e3ff",
+                      "surface": "#faf8ff",
+                      "on-primary-fixed": "#001b3c",
+                      "on-tertiary-fixed": "#380d00",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "surface-dim": "#d9d9e2",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#9cc0fb",
+                      "primary": "#063669",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#274e82",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#ffaa8a",
+                      "secondary-container": "#d5e3fc",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#651f00",
+                      "surface-container": "#ededf6",
+                      "tertiary-container": "#8b2e01",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "surface-container-low": "#f3f3fc",
+                      "secondary-fixed": "#d5e3fc",
+                      "outline-variant": "#c3c6d5",
+                      "surface-container-highest": "#e2e2eb",
+                      "on-primary-fixed-variant": "#1f477b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient-primary {
+            background: linear-gradient(135deg, #063669 0%, #274e82 100%);
+        }
+        .asymmetric-canvas {
+            padding-left: clamp(2rem, 8vw, 12rem);
+            padding-right: clamp(2rem, 5vw, 8rem);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="bg-[#faf8ff] dark:bg-slate-950 sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-[#063669] dark:text-blue-300 font-headline">
+                Academic Editorial
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] font-semibold tracking-tight text-sm">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#063669] dark:hover:text-blue-300 transition-colors duration-200" href="#">Scholarships</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#063669] dark:hover:text-blue-300 transition-colors duration-200" href="#">Eligibility</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#063669] dark:hover:text-blue-300 transition-colors duration-200" href="#">Deadlines</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-['Manrope'] font-semibold tracking-tight text-sm text-slate-500 hover:text-[#063669] transition-colors">Support</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="portrait of a young student in a library setting with soft natural light and academic books in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxsQD_vBlw-XcLYgixmDQk2MzHTKmLv3K-aGaEUPd5BSe-EUmPdigsY-ZS2WnT1m-l5Pc3fGnAzXfrYYcdzTPsgx_9FUZ-WL8DQRI5ASSbUoY1jKBcBntyUpLJ7JvP8sf47TwGr2TjxDpCBxTUxlunJcLUiaeJl3gIl8cZ2NneMospvC1ICEMw1P6IDfQbn1W74GcDz1Df_C_vbIltRIQmHOPNqTHFswAQreZs4GY48thEtn6xI1RHtzmo-Vc2lu63KTsxV23I9b8"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+<!-- Hero Welcome Section -->
+<section class="asymmetric-canvas pt-16 pb-12">
+<div class="max-w-4xl">
+<h1 class="font-headline font-extrabold text-5xl lg:text-6xl text-primary tracking-tight mb-4">
+                    Welcome back, <span class="text-on-primary-container">Alex Rivera</span>!
+                </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl font-medium leading-relaxed">
+                    Your academic journey is uniquely yours. We've curated the latest scholarship opportunities tailored to your profile and progress.
+                </p>
+</div>
+</section>
+<!-- Main Dashboard Actions -->
+<section class="asymmetric-canvas mb-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Quick Action Card: Update Profile -->
+<div class="group relative bg-surface-container-lowest p-10 rounded-xl transition-all duration-300 hover:translate-y-[-4px]">
+<!-- Background Accent -->
+<div class="absolute inset-0 bg-surface-container-low opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl -z-10"></div>
+<div class="flex flex-col h-full">
+<div class="w-14 h-14 editorial-gradient-primary rounded-lg flex items-center justify-center mb-8 shadow-sm">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="edit_note">edit_note</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary mb-4">Update Profile</h2>
+<p class="text-on-surface-variant font-body mb-10 leading-relaxed text-base">
+                            Keep your academic and personal details current to get accurate matches. Recent achievements and grade updates improve your eligibility scoring.
+                        </p>
+<div class="mt-auto">
+<button class="inline-flex items-center gap-2 editorial-gradient-primary text-white font-label px-8 py-4 rounded-lg font-semibold shadow-sm hover:opacity-90 transition-all scale-95 active:scale-90">
+                                Edit Details
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Action Card: Check Scholarships -->
+<div class="group relative bg-surface-container-lowest p-10 rounded-xl transition-all duration-300 hover:translate-y-[-4px]">
+<div class="absolute inset-0 bg-secondary-container/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl -z-10"></div>
+<div class="flex flex-col h-full">
+<div class="w-14 h-14 bg-tertiary-container rounded-lg flex items-center justify-center mb-8 shadow-sm">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="school">school</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary mb-4">Check My Scholarships</h2>
+<p class="text-on-surface-variant font-body mb-10 leading-relaxed text-base">
+                            Instantly see which scholarships you are eligible for based on your profile. We've identified 12 new matches for the upcoming semester.
+                        </p>
+<div class="mt-auto">
+<button class="inline-flex items-center gap-2 bg-primary text-on-primary font-label px-8 py-4 rounded-lg font-semibold shadow-sm hover:opacity-90 transition-all scale-95 active:scale-90">
+                                View Eligibility
+                                <span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Insights / Bento-style minor cards -->
+<section class="asymmetric-canvas mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Deadline Tracker -->
+<div class="lg:col-span-2 bg-surface-container p-8 rounded-xl flex items-center justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">Upcoming Deadlines</h3>
+<p class="text-on-surface-variant text-sm font-medium">3 applications closing this week.</p>
+</div>
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-4 border-surface bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs uppercase">Dec 15</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs uppercase">Jan 02</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-xs uppercase">Jan 10</div>
+</div>
+</div>
+<!-- Profile Strength -->
+<div class="bg-surface-container-high p-8 rounded-xl">
+<h3 class="font-headline font-bold text-xl text-primary mb-4">Profile Strength</h3>
+<div class="w-full bg-outline-variant/30 h-2 rounded-full overflow-hidden mb-4">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+<p class="text-on-surface-variant text-xs font-semibold">85% Complete — Add your extracurriculars to reach 100%.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#ededf6] dark:bg-slate-900 border-t border-slate-200/50 dark:border-slate-800/50 full-width py-12 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 max-w-7xl mx-auto gap-4">
+<div class="text-sm font-bold text-[#063669] dark:text-blue-300 font-headline uppercase tracking-widest">
+                Academic Editorial
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-['Inter'] text-xs font-medium">
+<a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#063669] dark:hover:text-blue-200 transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#063669] dark:hover:text-blue-200 transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#063669] dark:hover:text-blue-200 transition-opacity duration-200" href="#">Accessibility</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline hover:text-[#063669] dark:hover:text-blue-200 transition-opacity duration-200" href="#">Contact Support</a>
+</div>
+<div class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-medium opacity-70">
+                © 2024 Academic Editorial Scholarship Portal. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

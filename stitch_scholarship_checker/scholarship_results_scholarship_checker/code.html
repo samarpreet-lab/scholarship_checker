@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Eligible Scholarships | Civitas Academic</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d5e3fc",
+                        "background": "#faf8ff",
+                        "outline": "#737784",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-tertiary-fixed": "#380d00",
+                        "secondary-container": "#d5e3fc",
+                        "tertiary": "#651f00",
+                        "surface-container-high": "#e7e7f0",
+                        "on-surface": "#191b22",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9d9e2",
+                        "secondary": "#515f74",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-tint": "#3a5f94",
+                        "surface": "#faf8ff",
+                        "outline-variant": "#c3c6d5",
+                        "tertiary-container": "#8b2e01",
+                        "primary-container": "#274e82",
+                        "on-tertiary-fixed-variant": "#802900",
+                        "surface-container": "#ededf6",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffaa8a",
+                        "surface-bright": "#faf8ff",
+                        "on-surface-variant": "#434653",
+                        "on-primary-container": "#9cc0fb",
+                        "inverse-surface": "#2e3037",
+                        "inverse-on-surface": "#f0f0f9",
+                        "inverse-primary": "#a7c8ff",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-background": "#191b22",
+                        "surface-variant": "#e2e2eb",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-container-highest": "#e2e2eb",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3fc",
+                        "primary": "#063669",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-secondary-container": "#57657a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #063669 0%, #274e82 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen w-64 border-r border-outline-variant/15 bg-background p-6 sticky top-0">
+<div class="mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg editorial-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h2 class="font-black text-primary leading-none">Scholarship Portal</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-1">Academic Editorial</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface font-semibold hover:bg-surface-container/50 transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container text-primary rounded-lg font-semibold transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span>Eligibility</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface font-semibold hover:bg-surface-container/50 transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span>Saved</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface font-semibold hover:bg-surface-container/50 transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 space-y-2">
+<button class="w-full py-3 px-4 editorial-gradient text-white text-sm font-bold rounded-md transition-all active:opacity-80">
+                    Check New Eligibility
+                </button>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant text-sm hover:text-primary" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant text-sm hover:text-primary" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span>Help</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#191b22] tracking-tighter">Civitas Academic</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#191b22]/70 font-bold text-sm tracking-tight hover:text-[#0047AB] transition-colors" href="#">Dashboard</a>
+<a class="text-[#0047AB] border-b-2 border-[#0047AB] pb-1 font-bold text-sm tracking-tight" href="#">Scholarships</a>
+<a class="text-[#191b22]/70 font-bold text-sm tracking-tight hover:text-[#0047AB] transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a young male university student with a friendly expression and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXQBoQWXE5d8oMTHGlG1x-LJ2_bu1J5HKuqU-5lfEL6Gnh3VIC_e809OL71HOWHxRtr4SeznbCEQI8_pcQeSK24q-t5OQngdgTqEjWyF4X5sBpsJhx0lM0_gnkSvBtEgnRECZdS7jeJYahTqS4248rQTWTnMm1_I2vu6_q5olEHoJXBVs7ZN3DUW1QZR3WjBnQq4K27__EPN4_Cq56u21BKaaE1fDsRDcYXT19m7CjNp8sDMsi5udCuHDQ259mmdJOTOE6sgE-TDQ"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container h-[1px] w-full"></div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 p-8 lg:p-12 max-w-7xl mx-auto w-full">
+<!-- Editorial Header -->
+<section class="mb-12 relative">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-black uppercase tracking-[0.2em] rounded-sm mb-4">Verification Complete</span>
+<h1 class="text-5xl font-black text-on-surface tracking-tighter leading-tight mb-4">My Eligible Scholarships</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed font-body">
+                            Congratulations. You qualify for <span class="text-primary font-bold">3 scholarships</span> based on your current academic profile and geographic data.
+                        </p>
+</div>
+<!-- Decorative overlapping element -->
+<div class="absolute -top-12 -right-4 w-32 h-32 bg-primary-container/5 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- Results Bento Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
+<!-- Main Results Card (Table) -->
+<div class="xl:col-span-2 bg-surface-container-lowest rounded-xl p-0 overflow-hidden border border-outline-variant/10 shadow-sm">
+<div class="px-8 py-6 bg-surface-container-low border-b border-outline-variant/5 flex justify-between items-center">
+<h3 class="text-lg font-bold text-primary">Matched Opportunities</h3>
+<button class="text-xs font-bold text-on-surface-variant flex items-center gap-1 hover:text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                                Sort by Deadline
+                            </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[11px] uppercase tracking-widest text-on-surface-variant/70">
+<th class="px-8 py-5 font-bold">Scholarship Details</th>
+<th class="px-6 py-5 font-bold">Amount</th>
+<th class="px-6 py-5 font-bold">Deadline</th>
+<th class="px-8 py-5 font-bold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Merit Excellence Award</span>
+<span class="text-sm text-on-surface-variant">Ministry of Education</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-semibold bg-primary-fixed text-on-primary-fixed">
+                                                ₹50,000
+                                            </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                                                2024-12-31
+                                            </div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4">Apply Now</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Regional Talent Scholarship</span>
+<span class="text-sm text-on-surface-variant">State Govt</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-semibold bg-primary-fixed text-on-primary-fixed">
+                                                ₹25,000
+                                            </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2 text-sm text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="event_busy">event_busy</span>
+                                                2024-11-15
+                                            </div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4">Apply Now</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Civitas Academic Grant</span>
+<span class="text-sm text-on-surface-variant">Civitas Foundation</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-semibold bg-primary-fixed text-on-primary-fixed">
+                                                ₹15,000
+                                            </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                                                2025-01-20
+                                            </div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4">Apply Now</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Side Editorial Info / Stats -->
+<div class="space-y-6">
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2">Total Potential Funding</h4>
+<div class="text-4xl font-black text-primary tracking-tighter mb-4">₹90,000</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Combined value of all scholarships you are currently eligible to apply for.</p>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-10 scale-150 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[120px]" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="bg-primary-container text-white p-8 rounded-xl">
+<h4 class="text-xs font-black uppercase tracking-widest text-on-primary-container mb-4">Next Steps</h4>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">1</div>
+<p class="text-sm text-on-primary-container">Prepare academic transcripts &amp; income certificates.</p>
+</li>
+<li class="flex gap-3">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">2</div>
+<p class="text-sm text-on-primary-container">Draft your statement of purpose for the Merit Award.</p>
+</li>
+<li class="flex gap-3">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">3</div>
+<p class="text-sm text-on-primary-container">Submit applications before the earliest deadline (Nov 15).</p>
+</li>
+</ul>
+</div>
+<div class="p-8 border border-outline-variant/20 rounded-xl bg-surface-container-low flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<p class="text-xs font-bold text-tertiary uppercase tracking-tighter">Urgent Deadline</p>
+<p class="text-sm font-semibold text-on-surface">Regional Talent ends in 12 days</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Article/Insight (Asymmetric Layout) -->
+<section class="mt-20 flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl relative group">
+<img alt="Academic Environment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="students studying together in a modern high-ceiling library with large windows and soft natural afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSgw3AjlIUKSFMoNvpWgwjTkhMmgEKSyfnmW25T_vxJ3u350uw4q_Pe_MSJe-F1I3z8HMFY3gGY-zMNLPZU3QEjKl5WRkxbvh9yFdgnPkgXQdrzmLvTpz72azuo1LiXyHLSxKbvk2XUHAoIVttK5PXfhsfMcxTvyrWmiXFyOEGUG5tq0Tpk0gBTaLFWF5R8apvCuLGgfhW8rcmqFnfSJMMavlXemgRAIXKBOBuJDwOnwjA-qe5VoQ7LtLOHd28H01unnjGt_oz4w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-[10px] font-black tracking-widest uppercase mb-1">Scholarship Success</p>
+<p class="text-xl font-bold">How to win the Merit Award</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 md:pl-12">
+<span class="text-primary font-bold text-sm">Insider Insight</span>
+<h3 class="text-3xl font-black tracking-tight text-on-surface mt-2 mb-6">Expert Tips for Your Application</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                            The Ministry of Education prioritizes community involvement alongside GPA. When applying for the Merit Excellence Award, ensure you highlight your volunteer work at Civitas Foundation.
+                        </p>
+<button class="group flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                            Read the Full Guide
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t border-outline-variant/10 flex justify-around items-center py-3 px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="text-[10px] font-bold">Eligible</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-bold">Saved</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>

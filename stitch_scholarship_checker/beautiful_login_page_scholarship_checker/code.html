@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ffaa8a",
+                    "on-background": "#121417",
+                    "tertiary": "#651f00",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-surface-variant": "#434653",
+                    "surface-container-highest": "#e2e2eb",
+                    "secondary-fixed": "#d5e3fc",
+                    "primary-container": "#274e82",
+                    "error": "#ba1a1a",
+                    "background": "#ffffff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "primary": "#002855",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3037",
+                    "surface-variant": "#e2e2eb",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "outline": "#737784",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-bright": "#faf8ff",
+                    "secondary-container": "#d5e3fc",
+                    "primary-fixed": "#d5e3ff",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "on-secondary-container": "#57657a",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3fc",
+                    "tertiary-container": "#8b2e01",
+                    "surface-dim": "#d9d9e2",
+                    "surface": "#ffffff",
+                    "inverse-on-surface": "#f0f0f9",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "secondary": "#515f74",
+                    "on-primary-container": "#9cc0fb",
+                    "surface-container": "#f8f9fb",
+                    "on-tertiary-fixed-variant": "#802900",
+                    "outline-variant": "#e2e4e9",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#002855",
+                    "surface-container-high": "#f0f2f5",
+                    "on-surface": "#121417",
+                    "on-tertiary-fixed": "#380d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .premium-shadow {
+            box-shadow: 0 20px 50px -12px rgba(0, 40, 85, 0.12);
+        }
+        .form-input-focus {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .form-input-focus:focus-within {
+            box-shadow: 0 0 0 4px rgba(0, 40, 85, 0.08);
+            border-color: #002855;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col selection:bg-primary/10">
+<!-- Navigation -->
+<header class="w-full absolute top-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-8 max-w-7xl mx-auto">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-base">account_balance</span>
+</div>
+<span class="text-lg font-headline font-extrabold tracking-tight text-primary">Academic Editorial</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<span class="text-xs font-label font-bold tracking-widest text-primary/60 uppercase">Civitas Academic Portal</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center relative min-h-screen pt-20 pb-12 overflow-hidden">
+<!-- Immersive Background Image (Fixed) -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="High-end minimalist library architecture with soaring white arches and soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYIT5VQmKrXhpUTSI-t-AS9NwasO6XcbUlAvNqNKtF-FxanZattbVw9UYfWGPYzivo7Z8tvnyl3IkYdMgo-0MqY_eqaGI7FEbQlBrE3S3Sy0IpiHFSphFi4BmhA2YiGvw35bYRvnjcJzUfqqTQ-Yndr8Igu3m59lQh1tD4CcsibFPtioS_URYlZ6_jjHkKoSF1U61fZQQt4hBqowJyIlihEziDpNgYSvNUBQogHhNZ81M5vHL7OdOSR9wKpcyLmsLCymg7FOr3Jms"/>
+<!-- Soft gradient overlay for premium feel -->
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/40 to-transparent"></div>
+</div>
+<!-- Login Container -->
+<div class="relative z-10 w-full max-w-[1100px] px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+<!-- Left Side Content: Messaging -->
+<div class="hidden md:block w-1/2 pr-12">
+<div class="space-y-6">
+<span class="inline-block px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">Excellence in Research</span>
+<h2 class="font-headline text-5xl font-extrabold tracking-tight text-on-background leading-[1.1]">
+                    Elevating the <span class="text-primary">standards</span> of global scholarship.
+                </h2>
+<p class="text-secondary text-lg leading-relaxed max-w-md font-light">
+                    Access our secure, institutional-grade portal to manage scholarly opportunities and peer assessments.
+                </p>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-400"></div>
+</div>
+<span class="text-xs font-medium text-secondary/70 italic">Trusted by 500+ leading institutions</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Elegant Login Card -->
+<div class="w-full md:w-[460px] glass-effect p-10 md:p-12 rounded-2xl premium-shadow border border-white/50">
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline text-3xl font-extrabold text-on-background tracking-tight mb-2">Welcome Back.</h1>
+<p class="text-secondary text-sm font-normal">Secure authentication for faculty &amp; staff.</p>
+</div>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-[11px] font-bold text-on-surface-variant tracking-[0.1em] uppercase ml-1" for="email">Institutional Email</label>
+<div class="form-input-focus flex items-center bg-white border border-outline-variant rounded-xl overflow-hidden px-4">
+<span class="material-symbols-outlined text-outline/60">alternate_email</span>
+<input class="w-full bg-transparent border-none py-4 text-on-surface focus:ring-0 placeholder:text-outline/40 font-body text-sm" id="email" name="email" placeholder="email@university.edu" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center ml-1">
+<label class="block text-[11px] font-bold text-on-surface-variant tracking-[0.1em] uppercase" for="password">Password</label>
+<a class="text-[10px] font-bold text-primary/60 hover:text-primary transition-colors uppercase tracking-wider" href="#">Forgot Password?</a>
+</div>
+<div class="form-input-focus flex items-center bg-white border border-outline-variant rounded-xl overflow-hidden px-4">
+<span class="material-symbols-outlined text-outline/60">lock</span>
+<input class="w-full bg-transparent border-none py-4 text-on-surface focus:ring-0 placeholder:text-outline/40 font-body text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full py-4 px-6 bg-primary text-on-primary font-headline font-bold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/95 active:scale-[0.99] transition-all duration-300" type="submit">
+                        Sign In to Portal
+                    </button>
+</div>
+</form>
+<div class="mt-10 pt-8 border-t border-outline-variant/40">
+<p class="text-xs text-secondary/80 text-center font-medium">
+                    New to Academic Editorial? 
+                    <a class="text-primary font-bold ml-1 hover:underline decoration-1 underline-offset-4" href="#">Create institutional account</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-transparent py-10 mt-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 max-w-7xl mx-auto gap-8">
+<div class="text-[11px] font-bold text-primary tracking-widest uppercase">Academic Editorial</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body text-[10px] font-bold text-secondary/60 hover:text-primary uppercase tracking-wider transition-colors" href="#">Privacy</a>
+<a class="font-body text-[10px] font-bold text-secondary/60 hover:text-primary uppercase tracking-wider transition-colors" href="#">Terms</a>
+<a class="font-body text-[10px] font-bold text-secondary/60 hover:text-primary uppercase tracking-wider transition-colors" href="#">Security</a>
+<a class="font-body text-[10px] font-bold text-secondary/60 hover:text-primary uppercase tracking-wider transition-colors" href="#">Support</a>
+</div>
+<div class="font-body text-[10px] font-medium text-secondary/40">
+            © 2024 Academic Editorial Portal.
+        </div>
+</div>
+</footer>
+</body></html>

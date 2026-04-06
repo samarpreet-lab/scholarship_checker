@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholarship Portal - Register</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f0f9",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#9cc0fb",
+                        "inverse-surface": "#2e3037",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "secondary": "#515f74",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#8b2e01",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#d5e3fc",
+                        "surface-container-high": "#e7e7f0",
+                        "primary-container": "#274e82",
+                        "surface-tint": "#3a5f94",
+                        "inverse-primary": "#a7c8ff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface": "#faf8ff",
+                        "on-surface": "#191b22",
+                        "surface-variant": "#e2e2eb",
+                        "outline-variant": "#c3c6d5",
+                        "on-primary-fixed": "#001b3c",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802900",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9d9e2",
+                        "primary": "#063669",
+                        "on-tertiary-container": "#ffaa8a",
+                        "on-surface-variant": "#434653",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "tertiary": "#651f00",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "tertiary-fixed": "#ffdbcf",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#57657a",
+                        "background": "#faf8ff",
+                        "surface-container-low": "#f3f3fc",
+                        "on-background": "#191b22",
+                        "surface-container-highest": "#e2e2eb",
+                        "on-tertiary-fixed": "#380d00",
+                        "surface-container": "#ededf6",
+                        "outline": "#737784"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #063669 0%, #274e82 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background-color: rgba(250, 248, 255, 0.85);
+        }
+        .input-editorial {
+            border-radius: 0.25rem 0.25rem 0 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .input-editorial:focus {
+            border-bottom-color: #063669;
+            box-shadow: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<header class="bg-[#faf8ff] dark:bg-slate-950 backdrop-blur-md bg-opacity-80 border-b border-[#c3c6d5]/15 fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-2">
+<span class="text-xl font-extrabold text-[#063669] dark:text-white tracking-tighter font-headline">Scholarship Portal</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#063669] font-headline font-bold tracking-tight" href="#">Eligibility</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#063669] font-headline font-bold tracking-tight" href="#">Programs</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#063669] font-headline font-bold tracking-tight" href="#">Archives</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:text-[#063669] font-headline font-bold tracking-tight px-4 py-2 rounded-lg hover:bg-slate-100 transition-colors">Support</button>
+<button class="bg-primary text-on-primary font-headline font-bold tracking-tight px-6 py-2.5 rounded-md editorial-gradient shadow-sm">Sign In</button>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center pt-20 px-6 relative overflow-hidden bg-surface-container">
+<div class="absolute inset-0 z-0">
+<img alt="Institutional Background" class="w-full h-full object-cover opacity-30 grayscale-[0.2]" data-alt="Modern architectural interior of a university library with clean lines, soft natural lighting, and expansive glass windows reflecting academic prestige" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJWGKpvBFAFZ05HhTaVyvPQKmGN5Ahi2_qUuswzy83dkW1ebGBsD3FjvLuR5F45efTQPH9PnyHrfbxdln-Z7y4I-PDWGvhYj7Jy6AvdCxkbYyof5lslJKx_lCjoemJ9w3Rc3o9SfEada28K-mGserbeS3Yv0wx4ffuMl71xfw84HjyEDpJsfWzLnuJx6MRKf9KPgUqvhmEuZKB3vMiFUQNmi9RDZwtEgt5PouBQEG3u7WMrsvScsc_z4TcCnV7mrhwwwtyOJr7jic"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-transparent to-primary/10"></div>
+</div>
+<div class="z-10 w-full max-w-5xl flex flex-col md:flex-row shadow-2xl rounded-xl overflow-hidden border border-outline-variant/15">
+<div class="w-full md:w-5/12 editorial-gradient p-12 text-on-primary flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<h1 class="font-headline text-4xl font-extrabold tracking-tighter mb-6 leading-tight">Begin Your Academic Journey.</h1>
+<p class="text-on-primary-container font-body text-lg leading-relaxed opacity-90 mb-8">
+                        Join an elite network of scholars and researchers. Secure your institutional access to global funding opportunities and editorial resources.
+                    </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="verified_user">verified_user</span>
+<div>
+<span class="block font-bold">Verified Status</span>
+<span class="text-sm opacity-80">Institutional email verification required.</span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<span class="block font-bold">Curated Matches</span>
+<span class="text-sm opacity-80">Personalized eligibility tracking.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+<div class="mt-12 text-xs uppercase tracking-widest opacity-60">
+                    Academic Editorial Scholarship Fund
+                </div>
+</div>
+<div class="w-full md:w-7/12 glass-panel p-12 flex flex-col justify-center">
+<div class="mb-8">
+<h2 class="font-headline text-2xl font-bold text-primary mb-2">Create Account</h2>
+<p class="text-secondary font-body">Enter your details to register for the portal.</p>
+</div>
+<form class="space-y-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">Full Name</label>
+<input class="w-full p-4 bg-surface-container-high input-editorial text-on-surface font-body border-0" placeholder="Dr. Julian Reed" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">Institutional Email</label>
+<input class="w-full p-4 bg-surface-container-high input-editorial text-on-surface font-body border-0" placeholder="reed.j@university.edu" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">Password</label>
+<input class="w-full p-4 bg-surface-container-high input-editorial text-on-surface font-body border-0" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label">Confirm Password</label>
+<input class="w-full p-4 bg-surface-container-high input-editorial text-on-surface font-body border-0" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-start gap-3 py-2">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 rounded border-outline-variant text-primary focus:ring-primary" id="terms" type="checkbox"/>
+</div>
+<label class="text-sm text-on-surface-variant leading-tight" for="terms">
+                            I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<div class="pt-4 flex flex-col gap-4">
+<button class="w-full editorial-gradient text-on-primary font-headline font-bold py-4 rounded-md shadow-lg transform active:scale-95 transition-all" type="submit">
+                            Complete Registration
+                        </button>
+<p class="text-center text-sm text-secondary">
+                            Already registered? <a class="text-primary font-bold hover:underline" href="#">Login to Portal</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="bg-[#faf8ff] dark:bg-slate-950 w-full py-8 mt-auto border-t border-[#c3c6d5]/15 flex flex-col md:flex-row justify-between items-center px-12 font-['Inter'] text-xs uppercase tracking-widest">
+<p class="text-slate-400 dark:text-slate-500">© 2024 Academic Editorial Scholarship Fund. All Rights Reserved.</p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="text-slate-400 dark:text-slate-500 hover:text-[#063669] dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-[#063669] dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-[#063669] dark:hover:text-white transition-colors" href="#">Institutional Partners</a>
+</div>
+</footer>
+</body></html>
