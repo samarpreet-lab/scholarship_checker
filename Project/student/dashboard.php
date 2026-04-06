@@ -43,8 +43,8 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
             <p class="text-muted mb-0 lead" style="font-size: 1.1rem;">Academic Editorial Scholarship Fund Portal Overview</p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
-            <a href="profile.php" class="btn btn-outline-primary px-4 fw-bold" style="border-color: #002855; color: #002855;"><i class="bi bi-person-fill me-2"></i>Curriculum Vitae</a>
-            <a href="results.php" class="btn px-4 fw-bold text-white shadow-sm" style="background-color: #002855;"><i class="bi bi-search me-2"></i>Browse Grants</a>
+            <a href="<?php echo $base; ?>student/profile.php" class="btn btn-outline-primary px-4 fw-bold" style="border-color: #002855; color: #002855;"><i class="bi bi-person-fill me-2"></i>Curriculum Vitae</a>
+            <a href="<?php echo $base; ?>student/results.php" class="btn px-4 fw-bold text-white shadow-sm" style="background-color: #002855;"><i class="bi bi-search me-2"></i>Browse Grants</a>
         </div>
     </div>
 

@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php require_once 'includes/header.php'; ?>
 
-<div class="row g-0 vh-100 w-100">
+<div class="row g-0 min-vh-100 w-100">
     <!-- Left Side: Messaging -->
     <div class="col-md-5 d-none d-md-flex flex-column justify-content-center align-items-start p-5" style="background-color: #002855; color: white;">
         <h1 class="display-4 fw-bold mb-4" style="line-height: 1.2;">Begin Your <br>Academic Journey.</h1>
@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="mt-5 pt-4 border-top text-center">
                 <p class="text-muted mb-0" style="font-size: 0.85rem;">
                     Already registered? 
-                    <a href="index.php" class="fw-bold text-decoration-none" style="color: #002855;">Login to Portal</a>
+                    <a href="<?php echo $base; ?>index.php" class="fw-bold text-decoration-none" style="color: #002855;">Login to Portal</a>
                 </p>
             </div>
         </div>

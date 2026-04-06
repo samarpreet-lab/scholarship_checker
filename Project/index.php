@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php require_once 'includes/header.php'; ?>
 
-<div class="row g-0 vh-100 w-100">
+<div class="row g-0 min-vh-100 w-100">
     <!-- Left Side: Messaging -->
     <div class="col-md-5 d-none d-md-flex flex-column justify-content-center align-items-start p-5" style="background-color: #002855; color: white;">
         <span class="badge bg-light text-primary mb-3 py-2 px-3 fw-bold text-uppercase" style="letter-spacing: 0.1em; font-size: 0.75rem;">Excellence in Research</span>
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="mt-5 pt-4 border-top text-center">
                 <p class="text-muted mb-0" style="font-size: 0.85rem;">
                     New to Academic Editorial? 
-                    <a href="register.php" class="fw-bold text-decoration-none" style="color: #002855;">Create institutional account</a>
+                    <a href="<?php echo $base; ?>register.php" class="fw-bold text-decoration-none" style="color: #002855;">Create institutional account</a>
                 </p>
             </div>
         </div>
