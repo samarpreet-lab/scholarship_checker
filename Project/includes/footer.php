@@ -3,11 +3,10 @@
 $current_page = basename($_SERVER['PHP_SELF']);
 $is_auth_page = ($current_page === 'index.php' || $current_page === 'register.php');
 $is_authenticated = isset($_SESSION['user_id']);
-$is_student = ($is_authenticated && $_SESSION['role'] === 'student');
 
-if ($is_authenticated && !$is_auth_page && $is_student):
+if ($is_authenticated && !$is_auth_page):
 ?>
-</div> <!-- End main-content wrapper for students -->
+</div> <!-- End main-content wrapper -->
 <?php endif; ?>
 
 </div> <!-- End container-fluid p-0 -->

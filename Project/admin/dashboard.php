@@ -54,7 +54,7 @@ require_once '../includes/header.php';
         </div>
         
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 bg-light">
+            <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
@@ -69,7 +69,7 @@ require_once '../includes/header.php';
         </div>
 
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 bg-light">
+            <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="badge p-3 rounded-circle text-white shadow-sm bg-success">
@@ -87,7 +87,7 @@ require_once '../includes/header.php';
     <!-- Quick Actions -->
     <div class="row g-4">
         <div class="col-md-6">
-            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
+            <div class="card card-soft-border shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
                 <div class="mb-3">
                     <i class="bi bi-journal-plus" style="font-size: 3rem; color: #002855;"></i>
                 </div>
@@ -100,7 +100,7 @@ require_once '../includes/header.php';
         </div>
 
         <div class="col-md-6">
-            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
+            <div class="card card-soft-border shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
                 <div class="mb-3">
                     <i class="bi bi-table" style="font-size: 3rem; color: #002855;"></i>
                 </div>

@@ -31,21 +31,116 @@ $base = getBasePath();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand: #002855;
+            --brand-dark: #001a35;
+            --surface: #f8f9fb;
+            --surface-strong: #e9ecef;
+            --muted: #495057;
+            --muted-soft: #6c757d;
+            --white: #ffffff;
+        }
+
         body { 
-            background-color: #f8f9fb; 
+            background-color: var(--surface);
             font-family: 'Inter', sans-serif;
         }
         h1, h2, h3, h4, h5, h6, .navbar-brand {
             font-family: 'Manrope', sans-serif;
         }
-        .primary-color { color: #002855; }
-        .bg-primary-custom { background-color: #002855; color: white; }
-        
+        .primary-color { color: var(--brand); }
+        .text-primary { color: var(--brand) !important; }
+        .bg-primary-custom { background-color: var(--brand); color: var(--white); }
+
+        .btn-primary {
+            background-color: var(--brand);
+            border-color: var(--brand);
+            color: var(--white);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: #f1f4fb;
+            border-color: #d6dce8;
+            color: var(--brand);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #e7eef8;
+            border-color: #d0d8e8;
+            color: var(--brand-dark);
+        }
+
+        .btn-outline-primary {
+            color: var(--brand) !important;
+            border-color: var(--brand) !important;
+            background-color: transparent !important;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus,
+        .btn-outline-primary:active,
+        .btn-outline-primary:not(:disabled):not(.disabled):active {
+            background-color: var(--brand) !important;
+            border-color: var(--brand) !important;
+            color: var(--white) !important;
+        }
+
+        .btn-outline-secondary {
+            color: var(--muted) !important;
+            border-color: #d6dce8 !important;
+            background-color: transparent !important;
+        }
+
+        .btn-outline-secondary:hover,
+        .btn-outline-secondary:focus,
+        .btn-outline-secondary:active,
+        .btn-outline-secondary:not(:disabled):not(.disabled):active {
+            background-color: #f1f4fb !important;
+            border-color: #d0d8e8 !important;
+            color: var(--brand-dark) !important;
+        }
+
+        .btn-outline-danger {
+            color: #dc3545 !important;
+            border-color: #dc3545 !important;
+            background-color: transparent !important;
+        }
+
+        .btn-outline-danger:hover,
+        .btn-outline-danger:focus,
+        .btn-outline-danger:active {
+            background-color: #dc3545 !important;
+            border-color: #dc3545 !important;
+            color: var(--white) !important;
+        }
+
+        .card-soft-border {
+            border: 1px solid rgba(0, 40, 85, 0.1);
+            transition: border-color 0.2s ease;
+        }
+
+        .card-soft-border:hover {
+            border-color: rgba(0, 40, 85, 0.16);
+        }
+
+        .card-soft-border-dark {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
         /* Enhanced form styling */
         .form-control:focus {
-            border-color: #002855 !important;
+            border-color: var(--brand) !important;
             box-shadow: 0 0 0 0.2rem rgba(0, 40, 85, 0.15) !important;
-            background-color: #ffffff !important;
+            background-color: var(--white) !important;
         }
         
         .form-control {
@@ -222,19 +317,23 @@ if ($is_authenticated && !$is_auth_page):
     </div>
 </nav>
 
-<?php if ($is_student): ?>
-<!-- Left Sidebar (Student Only) -->
+<!-- Left Sidebar -->
 <aside class="sidebar">
     <ul class="sidebar-menu">
-        <li><a href="<?php echo $base; ?>student/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Dashboard</a></li>
-        <li><a href="<?php echo $base; ?>student/results.php" class="<?php echo ($current_page === 'results.php') ? 'active' : ''; ?>"><i class="bi bi-check-circle-fill"></i>Eligibility</a></li>
-        <li><a href="<?php echo $base; ?>student/profile.php" class="<?php echo ($current_page === 'profile.php') ? 'active' : ''; ?>"><i class="bi bi-person-circle"></i>Profile</a></li>
+        <?php if ($is_student): ?>
+            <li><a href="<?php echo $base; ?>student/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Dashboard</a></li>
+            <li><a href="<?php echo $base; ?>student/results.php" class="<?php echo ($current_page === 'results.php') ? 'active' : ''; ?>"><i class="bi bi-check-circle-fill"></i>Eligibility</a></li>
+            <li><a href="<?php echo $base; ?>student/profile.php" class="<?php echo ($current_page === 'profile.php') ? 'active' : ''; ?>"><i class="bi bi-person-circle"></i>Profile</a></li>
+        <?php else: ?>
+            <li><a href="<?php echo $base; ?>admin/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Overview</a></li>
+            <li><a href="<?php echo $base; ?>admin/scholarships.php" class="<?php echo ($current_page === 'scholarships.php') ? 'active' : ''; ?>"><i class="bi bi-award-fill"></i>Grants Directory</a></li>
+            <li><a href="<?php echo $base; ?>admin/add_scholarship.php" class="<?php echo ($current_page === 'add_scholarship.php') ? 'active' : ''; ?>"><i class="bi bi-plus-circle-fill"></i>New Grant</a></li>
+        <?php endif; ?>
     </ul>
 </aside>
 
-<!-- Main Content Wrapper (Student) -->
+<!-- Main Content Wrapper -->
 <div class="main-content">
-<?php endif; ?>
 
 <?php endif; ?>
 

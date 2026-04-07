@@ -45,9 +45,13 @@ require_once '../includes/header.php';
                             <td>₹<?php echo number_format($s['amount']); ?></td>
                             <td><?php echo $s['deadline']; ?></td>
                             <td>
-                                <a href="delete_scholarship.php?id=<?php echo $s['id']; ?>"
-                                   class="btn btn-sm btn-danger"
-                                   onclick="return confirm('Delete this scholarship?')">Delete</a>
+                                <div class="d-flex gap-2">
+                                    <a href="view_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-outline-primary shadow-sm"><i class="bi bi-eye"></i> View</a>
+                                    <a href="edit_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-outline-secondary shadow-sm"><i class="bi bi-pencil"></i> Edit</a>
+                                    <a href="delete_scholarship.php?id=<?php echo $s['id']; ?>"
+                                       class="btn btn-sm btn-outline-danger shadow-sm"
+                                       onclick="return confirm('Delete this scholarship?')"><i class="bi bi-trash"></i> Delete</a>
+                                </div>
                             </td>
                         </tr>
                         <?php endforeach; ?>

@@ -58,7 +58,7 @@ require_once '../includes/header.php';
 
 <div class="card shadow-sm mx-auto" style="max-width: 800px;">
     <div class="card-body">
-        <h2 class="card-title text-primary mb-4">Add New Scholarship</h2>
+        <h2 class="card-title primary-color mb-4">Add New Scholarship</h2>
 
         <?php if ($error): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -120,9 +120,9 @@ require_once '../includes/header.php';
                 </div>
             </div>
 
-            <div class="d-flex gap-2 mt-4">
-                <button type="submit" class="btn btn-primary">Add Scholarship</button>
-                <a href="scholarships.php" class="btn btn-secondary">Cancel</a>
+            <div class="d-flex gap-3 mt-4 pt-3 border-top">
+                <a href="scholarships.php" class="btn btn-outline-secondary px-4 fw-bold shadow-sm"><i class="bi bi-x-circle me-2"></i>Cancel</a>
+                <button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm"><i class="bi bi-check2-circle me-2"></i>Save Grant Configuration</button>
             </div>
         </form>
     </div>

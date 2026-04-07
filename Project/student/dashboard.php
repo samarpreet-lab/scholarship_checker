@@ -51,7 +51,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
     <!-- Stats Cards Row -->
     <div class="row g-4 mb-5">
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 bg-light">
+            <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
@@ -71,7 +71,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         </div>
 
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 text-white" style="background-color: #002855;">
+            <div class="card card-soft-border-dark shadow-sm h-100 rounded-4 text-white" style="background-color: #002855;">
                 <div class="card-body p-4 position-relative overflow-hidden">
                     <i class="bi bi-award position-absolute opacity-25" style="font-size: 8rem; right: -20px; bottom: -30px;"></i>
                     
@@ -91,7 +91,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         </div>
         
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 bg-light">
+            <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
@@ -109,7 +109,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
     <!-- Recent Activity / Info Section -->
     <div class="row g-4">
         <div class="col-md-8">
-            <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card card-soft-border shadow-sm rounded-4 h-100">
                 <div class="card-header bg-white border-0 pt-4 px-4 pb-2">
                     <h4 class="fw-bold mb-0" style="color: #002855;">Portal Guidelines</h4>
                 </div>
@@ -156,7 +156,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         </div>
 
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-4 text-center h-100 bg-light p-4 d-flex flex-column justify-content-center align-items-center">
+            <div class="card card-soft-border shadow-sm rounded-4 text-center h-100 bg-light p-4 d-flex flex-column justify-content-center align-items-center">
                 <div class="mb-4">
                     <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['name']); ?>&background=002855&color=fff&size=120" class="rounded-circle shadow-sm border border-white border-4" alt="Profile Placeholder">
                 </div>
