@@ -119,7 +119,7 @@ require_once '../includes/header.php';
                                    value="<?php echo $profile['family_income'] ?? 0; ?>" required style="padding: 12px 16px;">
                         </div>
 
-                        <button type="submit" class="btn btn-lg w-100 text-white fw-bold shadow-sm rounded-3" style="background-color: #002855; font-size: 0.95rem; padding: 14px; letter-spacing: 0.5px; transition: all 0.3s;" onmouseover="this.style.backgroundColor='#001a35'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='#002855'; this.style.transform='translateY(0)';">Save Profile Changes</button>
+                        <button type="submit" class="btn btn-lg w-100 text-white fw-bold shadow-sm rounded-3 btn-large-primary" style="font-size: 0.95rem; padding: 14px; letter-spacing: 0.5px;">Save Profile Changes</button>
                     </form>
                 </div>
             </div>

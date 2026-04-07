@@ -155,9 +155,103 @@ $base = getBasePath();
             font-weight: 400;
         }
         
-        /* Button hover effects */
         .btn:active {
             transform: translateY(0) !important;
+        }
+
+        /* Link styling */
+        a {
+            transition: all 0.2s ease;
+        }
+
+        a:not(.btn):not(.dropdown-item) {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        a:not(.btn):not(.dropdown-item):hover {
+            color: var(--brand-dark);
+            text-decoration: underline;
+        }
+
+        /* Navbar link hover effects */
+        .top-navbar a:not(.btn):hover {
+            color: var(--brand-dark) !important;
+        }
+
+        .top-navbar a:not(.btn) {
+            transition: color 0.2s ease;
+            color: var(--muted);
+        }
+
+        .dropdown-item:hover {
+            background-color: #f1f4fb;
+            color: var(--brand-dark);
+        }
+
+        .dropdown-item {
+            color: var(--brand);
+            transition: all 0.2s ease;
+        }
+
+        /* Footer and misc links */
+        footer a {
+            color: var(--muted) !important;
+        }
+
+        footer a:hover {
+            color: var(--brand) !important;
+        }
+
+        /* Override Bootstrap colors for consistency */
+        .text-success {
+            color: #4caf50 !important;
+        }
+
+        .text-danger {
+            color: #dc3545 !important;
+        }
+
+        .badge.bg-success {
+            background-color: #4caf50 !important;
+        }
+
+        .alert-success {
+            background-color: #e8f5e9 !important;
+            border-color: #4caf50 !important;
+            color: #2e7d32 !important;
+        }
+
+        .alert-danger {
+            background-color: #fee !important;
+            border-color: #dc3545 !important;
+            color: #c33 !important;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover,
+        .btn-danger:focus,
+        .btn-danger:active {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        /* Form submit button hover effects */
+        button[type="submit"].btn-large-primary {
+            background-color: var(--brand);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"].btn-large-primary:hover,
+        button[type="submit"].btn-large-primary:focus,
+        button[type="submit"].btn-large-primary:active {
+            background-color: var(--brand-dark);
+            transform: translateY(-2px);
         }
 
         /* Top Navbar Styling */

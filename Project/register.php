@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-lg w-100 text-white fw-bold shadow-sm rounded-3" style="background-color: #002855; font-size: 0.95rem; padding: 14px; letter-spacing: 0.5px; transition: all 0.3s;" onmouseover="this.style.backgroundColor='#001a35'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='#002855'; this.style.transform='translateY(0)';">Complete Registration</button>
+                <button type="submit" class="btn btn-lg w-100 text-white fw-bold shadow-sm rounded-3 btn-large-primary" style="font-size: 0.95rem; padding: 14px; letter-spacing: 0.5px;">Complete Registration</button>
             </form>
 
             <div class="mt-5 pt-4 border-top text-center">
