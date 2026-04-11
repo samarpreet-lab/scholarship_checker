@@ -1,0 +1,779 @@
+/* ============================= */
+/* Academic Editorial Portal CSS */
+/* ============================= */
+
+/* Root color variables */
+:root {
+    --brand: #002855;
+    --brand-dark: #001a35;
+    --surface: #f8f9fb;
+    --surface-strong: #e9ecef;
+    --muted: #495057;
+    --muted-soft: #6c757d;
+    --white: #ffffff;
+}
+
+/* ============================= */
+/* Base Styles */
+/* ============================= */
+
+body { 
+    background-color: var(--surface);
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Manrope', sans-serif;
+}
+
+.primary-color { 
+    color: var(--brand); 
+}
+
+.text-primary { 
+    color: var(--brand) !important; 
+}
+
+.bg-primary-custom { 
+    background-color: var(--brand); 
+    color: var(--white); 
+}
+
+/* ============================= */
+/* Button Styles */
+/* ============================= */
+
+.btn-primary {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: #f1f4fb;
+    border-color: #d6dce8;
+    color: var(--brand);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #e7eef8;
+    border-color: #d0d8e8;
+    color: var(--brand-dark);
+}
+
+.btn-outline-primary {
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+    background-color: var(--brand) !important;
+    border-color: var(--brand) !important;
+    color: var(--white) !important;
+}
+
+.btn-outline-secondary {
+    color: var(--muted) !important;
+    border-color: #d6dce8 !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
+    background-color: #f1f4fb !important;
+    border-color: #d0d8e8 !important;
+    color: var(--brand-dark) !important;
+}
+
+.btn-outline-danger {
+    color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus,
+.btn-outline-danger:active {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: var(--white) !important;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+button[type="submit"].btn-large-primary {
+    background-color: var(--brand);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+button[type="submit"].btn-large-primary:hover,
+button[type="submit"].btn-large-primary:focus,
+button[type="submit"].btn-large-primary:active {
+    background-color: var(--brand-dark);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0) !important;
+}
+
+/* ============================= */
+/* Card Styles */
+/* ============================= */
+
+.card-soft-border {
+    border: 1px solid rgba(0, 40, 85, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.card-soft-border:hover {
+    border-color: rgba(0, 40, 85, 0.16);
+}
+
+.card-soft-border-dark {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ============================= */
+/* Form Styles */
+/* ============================= */
+
+.form-control:focus {
+    border-color: var(--brand) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 40, 85, 0.15) !important;
+    background-color: var(--white) !important;
+}
+
+.form-control {
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    padding: 12px 16px !important;
+    font-size: 0.95rem;
+}
+
+.form-control::placeholder {
+    color: #b0b8c1;
+    font-weight: 400;
+}
+
+/* ============================= */
+/* Link Styles */
+/* ============================= */
+
+a {
+    transition: all 0.2s ease;
+}
+
+a:not(.btn):not(.dropdown-item) {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+a:not(.btn):not(.dropdown-item):hover {
+    color: var(--brand-dark);
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* Navbar Styles */
+/* ============================= */
+
+.top-navbar {
+    background-color: white;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-navbar a:not(.btn):hover {
+    color: var(--brand-dark) !important;
+}
+
+.top-navbar a:not(.btn) {
+    transition: color 0.2s ease;
+    color: var(--muted);
+}
+
+/* ============================= */
+/* Dropdown Styles */
+/* ============================= */
+
+.dropdown-item:hover {
+    background-color: #f1f4fb;
+    color: var(--brand-dark);
+}
+
+.dropdown-item {
+    color: var(--brand);
+    transition: all 0.2s ease;
+}
+
+/* ============================= */
+/* Sidebar Styles */
+/* ============================= */
+
+.sidebar {
+    background-color: #f8f9fb;
+    border-right: 1px solid #e9ecef;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 240px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background-color: #e9ecef;
+    border-left-color: #002855;
+    color: #002855;
+}
+
+.sidebar-menu a.active {
+    background-color: #e8f1ff;
+    border-left-color: #002855;
+    color: #002855;
+    font-weight: 600;
+}
+
+.sidebar-menu i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* ============================= */
+/* Main Content Styles */
+/* ============================= */
+
+.main-content {
+    margin-left: 240px;
+    margin-top: 70px;
+}
+
+/* ============================= */
+/* Footer Styles */
+/* ============================= */
+
+footer a {
+    color: var(--muted) !important;
+}
+
+footer a:hover {
+    color: var(--brand) !important;
+}
+
+/* ============================= */
+/* Alert and Badge Styles */
+/* ============================= */
+
+.text-success {
+    color: #4caf50 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.badge.bg-success {
+    background-color: #4caf50 !important;
+}
+
+.alert-success {
+    background-color: #e8f5e9 !important;
+    border-color: #4caf50 !important;
+    color: #2e7d32 !important;
+}
+
+.alert-danger {
+    background-color: #fee !important;
+    border-color: #dc3545 !important;
+    color: #c33 !important;
+}
+
+/* ============================= */
+/* Table Styles */
+/* ============================= */
+
+.table tbody tr:hover {
+    background-color: #f8f9fb !important;
+    transition: background-color 0.2s ease;
+}
+
+table thead {
+    background-color: #f8f9fb;
+    border-bottom: 2px solid #e9ecef;
+}
+
+table th {
+    font-weight: bold;
+    color: #495057 !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+/* ============================= */
+/* Responsive Styles */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        width: 200px;
+        z-index: 998;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* ============================= */
+/* Navbar Brand Styles */
+/* ============================= */
+
+.navbar-toggle {
+    color: var(--brand) !important;
+    border: none;
+    padding: 0;
+}
+
+.navbar-brand-link {
+    color: var(--brand) !important;
+}
+
+.navbar-brand-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+
+.navbar-link {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.navbar-icon-btn {
+    color: var(--muted);
+    font-size: 1.2rem;
+    border: none;
+    padding: 0;
+}
+
+.navbar-profile-btn {
+    background-color: var(--brand);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar-dropdown {
+    min-width: 200px;
+}
+
+/* ============================= */
+/* Footer Styles Extended */
+/* ============================= */
+
+.footer-main {
+    background: transparent;
+}
+
+.footer-brand {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--brand);
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+}
+
+.footer-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+}
+
+.footer-copyright {
+    font-size: 0.65rem;
+}
+
+/* ============================= */
+/* Login Page Styles */
+/* ============================= */
+
+.login-left-panel {
+    background-color: var(--brand);
+    color: white;
+}
+
+.login-badge {
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+}
+
+.login-heading {
+    line-height: 1.2;
+}
+
+.login-description {
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+
+.login-footer-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.login-title {
+    color: var(--brand);
+    font-size: 2rem;
+}
+
+.login-link {
+    color: var(--brand);
+}
+
+.login-footer {
+    font-size: 0.85rem;
+}
+
+.form-label-custom {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+/* ============================= */
+/* Register Page Styles */
+/* ============================= */
+
+.register-card {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.register-terms {
+    font-size: 0.85rem;
+}
+
+.register-footer {
+    font-size: 0.85rem;
+}
+
+/* ============================= */
+/* Dashboard Styles */
+/* ============================= */
+
+.dashboard-title {
+    color: var(--brand);
+}
+
+.dashboard-subtitle {
+    font-size: 1.1rem;
+}
+
+.dashboard-btn-outline {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.dashboard-btn-primary {
+    background-color: var(--brand);
+}
+
+.dashboard-stat-card-dark {
+    background-color: var(--brand);
+}
+
+.dashboard-stat-icon {
+    font-size: 8rem;
+    right: -20px;
+    bottom: -30px;
+}
+
+.dashboard-stat-title {
+    color: var(--brand);
+}
+
+.dashboard-card-title {
+    color: var(--brand);
+}
+
+.badge-brand {
+    background-color: var(--brand);
+}
+
+.badge-step {
+    width: 25px;
+    height: 25px;
+    background-color: var(--brand);
+}
+
+.guidelines-description {
+    font-size: 0.95rem;
+}
+
+.guidelines-heading {
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    color: var(--brand);
+}
+
+.dashboard-link {
+    color: var(--brand);
+}
+
+/* ============================= */
+/* Profile Page Styles */
+/* ============================= */
+
+.profile-card-title {
+    color: var(--brand);
+}
+
+.profile-field-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+
+.profile-field-value {
+    color: var(--brand);
+    font-size: 1.3rem;
+}
+
+/* ============================= */
+/* Results Page Styles */
+/* ============================= */
+
+.results-title {
+    color: var(--brand);
+}
+
+.scholarship-card-eligible {
+    border-left: 4px solid #28a745;
+}
+
+/* ============================= */
+/* Admin Dashboard Styles */
+/* ============================= */
+
+.admin-title {
+    color: var(--brand);
+}
+
+.admin-subtitle {
+    font-size: 1.1rem;
+}
+
+.admin-metric-card-dark {
+    background-color: var(--brand);
+}
+
+.admin-metric-icon {
+    font-size: 8rem;
+    right: -20px;
+    bottom: -30px;
+}
+
+.admin-metric-title {
+    color: var(--brand);
+}
+
+.admin-badge-primary {
+    background-color: var(--brand);
+}
+
+.admin-action-icon {
+    font-size: 3rem;
+    color: var(--brand);
+}
+
+.admin-action-title {
+    color: var(--brand);
+}
+
+.admin-btn-primary {
+    background-color: var(--brand);
+}
+
+.admin-link {
+    color: var(--brand);
+}
+
+/* ============================= */
+/* Scholarships Table Styles */
+/* ============================= */
+
+.scholarships-title {
+    color: var(--brand);
+    font-size: 1.8rem;
+}
+
+.scholarships-btn-add {
+    background-color: var(--brand);
+}
+
+.scholarships-icon {
+    font-size: 1.5rem;
+}
+
+.scholarships-table {
+    width: 100%;
+}
+
+.scholarships-th {
+    font-weight: bold;
+    color: var(--muted) !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.scholarships-row {
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.scholarships-name {
+    font-weight: bold;
+    color: var(--brand);
+    font-size: 0.95rem;
+}
+
+.scholarships-amount {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 0.95rem;
+}
+
+/* ============================= */
+/* Form Input Styles */
+/* ============================= */
+
+.form-input-custom {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    transition: all 0.3s;
+}
+
+.form-input-password {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    transition: all 0.3s;
+}
+
+.forgot-password {
+    font-size: 0.7rem;
+}
+
+.form-submit-custom {
+    font-size: 0.95rem;
+    padding: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/* Alert Styles */
+/* ============================= */
+
+.alert-danger-custom {
+    background-color: #fee;
+    color: #c33;
+}
+
+.alert-success-custom {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.icon-list-custom {
+    font-size: 1.5rem;
+}
+
+.icon-toggle-custom {
+    font-size: 1.5rem;
+}
+
+/* ============================= */
+/* View Scholarship Styles */
+/* ============================= */
+
+.view-card {
+    max-width: 800px;
+}
+
+.view-title {
+    color: var(--brand);
+}

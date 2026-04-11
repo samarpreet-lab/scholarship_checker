@@ -25,20 +25,20 @@ require_once '../includes/header.php';
 <div class="container mt-4 mb-5">
     <div class="row align-items-center mb-5">
         <div class="col-md-8">
-            <h1 class="display-6 fw-bold mb-1" style="color: #002855;">Administrative Console</h1>
-            <p class="text-muted mb-0 lead" style="font-size: 1.1rem;">Academic Editorial Scholarship Fund Portal</p>
+            <h1 class="display-6 fw-bold mb-1 admin-title">Administrative Console</h1>
+            <p class="text-muted mb-0 lead admin-subtitle">Academic Editorial Scholarship Fund Portal</p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
-            <a href="scholarships.php" class="btn px-4 fw-bold text-white shadow-sm rounded-pill" style="background-color: #002855;"><i class="bi bi-gear-fill me-2"></i>Configure Grants</a>
+            <a href="scholarships.php" class="btn px-4 fw-bold text-white shadow-sm rounded-pill admin-btn-primary"><i class="bi bi-gear-fill me-2"></i>Configure Grants</a>
         </div>
     </div>
 
     <!-- Metrics Row -->
     <div class="row g-4 mb-5">
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 rounded-4 text-white" style="background-color: #002855;">
+            <div class="card border-0 shadow-sm h-100 rounded-4 text-white admin-metric-card-dark">
                 <div class="card-body p-4 position-relative overflow-hidden">
-                    <i class="bi bi-people-fill position-absolute opacity-25" style="font-size: 8rem; right: -20px; bottom: -30px;"></i>
+                    <i class="bi bi-people-fill position-absolute opacity-25 admin-metric-icon"></i>
                     <div class="d-flex justify-content-between align-items-center mb-3 position-relative z-1">
                         <div class="badge p-3 rounded-circle bg-white text-primary shadow-sm">
                             <h4 class="m-0"><i class="bi bi-person-badge"></i></h4>
@@ -57,12 +57,12 @@ require_once '../includes/header.php';
             <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
+                        <div class="badge p-3 rounded-circle text-white shadow-sm admin-badge-primary">
                             <h4 class="m-0"><i class="bi bi-award-fill"></i></h4>
                         </div>
                         <span class="text-muted fw-bold small text-uppercase">Active Grants</span>
                     </div>
-                    <h2 class="display-5 fw-bold mb-1" style="color: #002855;"><?php echo $count; ?></h2>
+                    <h2 class="display-5 fw-bold mb-1 admin-metric-title"><?php echo $count; ?></h2>
                     <p class="text-muted small mb-0 fw-bold">Scholarship parameters defined</p>
                 </div>
             </div>
@@ -89,12 +89,12 @@ require_once '../includes/header.php';
         <div class="col-md-6">
             <div class="card card-soft-border shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
                 <div class="mb-3">
-                    <i class="bi bi-journal-plus" style="font-size: 3rem; color: #002855;"></i>
+                    <i class="bi bi-journal-plus admin-action-icon"></i>
                 </div>
-                <h4 class="fw-bold" style="color: #002855;">New Scholastic Grant</h4>
+                <h4 class="fw-bold admin-action-title">New Scholastic Grant</h4>
                 <p class="text-muted small mb-4 px-3">Define a new funding opportunity including course, CGPA, and demographic requirements.</p>
                 <div class="mt-auto">
-                    <a href="add_scholarship.php" class="btn btn-outline-primary fw-bold rounded-pill mx-auto" style="border-color: #002855; color: #002855; width: fit-content;">Access Scholarship Manager</a>
+                    <a href="add_scholarship.php" class="btn btn-outline-primary fw-bold rounded-pill mx-auto admin-link" style="border-color: var(--brand); color: var(--brand); width: fit-content;">Access Scholarship Manager</a>
                 </div>
             </div>
         </div>
@@ -102,12 +102,12 @@ require_once '../includes/header.php';
         <div class="col-md-6">
             <div class="card card-soft-border shadow-sm rounded-4 h-100 p-4 bg-light text-center flex-column justify-content-center">
                 <div class="mb-3">
-                    <i class="bi bi-table" style="font-size: 3rem; color: #002855;"></i>
+                    <i class="bi bi-table admin-action-icon"></i>
                 </div>
-                <h4 class="fw-bold" style="color: #002855;">Dataset Overview</h4>
+                <h4 class="fw-bold admin-action-title">Dataset Overview</h4>
                 <p class="text-muted small mb-4 px-3">Review the master list of all current grants available to researchers and academic students.</p>
                 <div class="mt-auto">
-                    <a href="scholarships.php" class="btn fw-bold rounded-pill text-white mx-auto shadow-sm" style="background-color: #002855; width: fit-content;">View Complete Dataset</a>
+                    <a href="scholarships.php" class="btn fw-bold rounded-pill text-white mx-auto shadow-sm admin-btn-primary" style="width: fit-content;">View Complete Dataset</a>
                 </div>
             </div>
         </div>

@@ -39,12 +39,12 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
     <!-- Dashboard Header Area -->
     <div class="row align-items-center mb-5">
         <div class="col-md-8">
-            <h1 class="display-6 fw-bold mb-1" style="color: #002855;">Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h1>
-            <p class="text-muted mb-0 lead" style="font-size: 1.1rem;">Academic Editorial Scholarship Fund Portal Overview</p>
+            <h1 class="display-6 fw-bold mb-1 dashboard-title">Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h1>
+            <p class="text-muted mb-0 lead dashboard-subtitle">Academic Editorial Scholarship Fund Portal Overview</p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
-            <a href="<?php echo $base; ?>student/profile.php" class="btn btn-outline-primary px-4 fw-bold" style="border-color: #002855; color: #002855;"><i class="bi bi-person-fill me-2"></i>Curriculum Vitae</a>
-            <a href="<?php echo $base; ?>student/results.php" class="btn px-4 fw-bold text-white shadow-sm" style="background-color: #002855;"><i class="bi bi-search me-2"></i>Browse Grants</a>
+            <a href="<?php echo $base; ?>student/profile.php" class="btn btn-outline-primary px-4 fw-bold dashboard-btn-outline"><i class="bi bi-person-fill me-2"></i>Curriculum Vitae</a>
+            <a href="<?php echo $base; ?>student/results.php" class="btn px-4 fw-bold text-white shadow-sm dashboard-btn-primary"><i class="bi bi-search me-2"></i>Browse Grants</a>
         </div>
     </div>
 
@@ -54,13 +54,13 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
             <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
+                        <div class="badge p-3 rounded-circle text-white shadow-sm badge-brand">
                             <h4 class="m-0"><i class="bi bi-mortarboard-fill"></i></h4>
                         </div>
                         <span class="text-muted fw-bold small text-uppercase">Profile Status</span>
                     </div>
                     <?php if ($student): ?>
-                        <h2 class="display-5 fw-bold mb-1" style="color: #002855;">Complete</h2>
+                        <h2 class="display-5 fw-bold mb-1 dashboard-stat-title">Complete</h2>
                         <p class="text-muted small mb-0 fw-bold"><span class="text-success"><i class="bi bi-check-circle-fill"></i> Verified</span> Academic Profile</p>
                     <?php else: ?>
                         <h2 class="display-5 fw-bold mb-1 text-danger">Pending</h2>
@@ -71,9 +71,9 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         </div>
 
         <div class="col-md-4">
-            <div class="card card-soft-border-dark shadow-sm h-100 rounded-4 text-white" style="background-color: #002855;">
+            <div class="card card-soft-border-dark shadow-sm h-100 rounded-4 text-white dashboard-stat-card-dark">
                 <div class="card-body p-4 position-relative overflow-hidden">
-                    <i class="bi bi-award position-absolute opacity-25" style="font-size: 8rem; right: -20px; bottom: -30px;"></i>
+                    <i class="bi bi-award position-absolute opacity-25 dashboard-stat-icon"></i>
                     
                     <div class="d-flex justify-content-between align-items-center mb-3 position-relative z-1">
                         <div class="badge p-3 rounded-circle bg-white text-primary shadow-sm">
@@ -94,12 +94,12 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
             <div class="card card-soft-border shadow-sm h-100 rounded-4 bg-light">
                 <div class="card-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="badge p-3 rounded-circle text-white shadow-sm" style="background-color: #002855;">
+                        <div class="badge p-3 rounded-circle text-white shadow-sm badge-brand">
                             <h4 class="m-0"><i class="bi bi-clock-history"></i></h4>
                         </div>
                         <span class="text-muted fw-bold small text-uppercase">Upcoming</span>
                     </div>
-                    <h2 class="display-5 fw-bold mb-1" style="color: #002855;">0</h2>
+                    <h2 class="display-5 fw-bold mb-1 dashboard-stat-title">0</h2>
                     <p class="text-muted small mb-0 fw-bold">Active institutional deadlines</p>
                 </div>
             </div>
@@ -111,13 +111,13 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         <div class="col-md-8">
             <div class="card card-soft-border shadow-sm rounded-4 h-100">
                 <div class="card-header bg-white border-0 pt-4 px-4 pb-2">
-                    <h4 class="fw-bold mb-0" style="color: #002855;">Portal Guidelines</h4>
+                    <h4 class="fw-bold mb-0 dashboard-card-title">Portal Guidelines</h4>
                 </div>
                 <div class="card-body p-4">
                     <?php if (!$student): ?>
                         <div class="p-4 rounded-4 text-center mb-3 bg-light border border-danger border-2 border-opacity-25">
                             <h5 class="fw-bold text-danger mb-2"><i class="bi bi-exclamation-triangle-fill me-2"></i>Action Required</h5>
-                            <p class="text-muted text-start mb-3" style="font-size: 0.95rem;">You must complete your Academic Curriculum Vitae (Profile) before the system can match you with eligible institutional funding. Your demographic and academic parameters are required to run the matching algorithm.</p>
+                            <p class="text-muted text-start mb-3 guidelines-description">You must complete your Academic Curriculum Vitae (Profile) before the system can match you with eligible institutional funding. Your demographic and academic parameters are required to run the matching algorithm.</p>
                             <div class="text-start">
                                 <a href="profile.php" class="btn btn-danger fw-bold shadow-sm px-4 rounded-pill">Complete CV Requirements Now</a>
                             </div>
@@ -128,26 +128,26 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
                                 <h4 class="text-success"><i class="bi bi-check-circle-fill"></i></h4>
                             </div>
                             <div>
-                                <h6 class="fw-bold mb-1" style="color: #002855;">Profile Up to Date</h6>
+                                <h6 class="fw-bold mb-1 dashboard-card-title">Profile Up to Date</h6>
                                 <p class="text-muted small mb-0">Your demographic information, enrolled program (<?php echo htmlspecialchars(!empty($student['course']) ? $student['course'] : 'Not set'); ?>), and financial parameters are configured and active.</p>
                             </div>
                         </div>
                     <?php endif; ?>
                     
-                    <h6 class="fw-bold text-uppercase mt-4 mb-3" style="font-size: 0.8rem; letter-spacing: 0.05rem; color: #002855;">Next Steps</h6>
+                    <h6 class="fw-bold text-uppercase mt-4 mb-3 guidelines-heading">Next Steps</h6>
                     <ul class="list-group list-group-flush border-0 mb-0">
                         <li class="list-group-item px-0 py-3 border-bottom-0 d-flex">
-                            <span class="badge rounded-circle me-3 d-flex align-items-center justify-content-center text-white" style="width:25px;height:25px; background-color: #002855;">1</span>
+                            <span class="badge rounded-circle me-3 d-flex align-items-center justify-content-center text-white badge-step">1</span>
                             <div>
-                                <h6 class="fw-bold mb-1" style="color: #002855;">Populate Demographic Profile</h6>
-                                <p class="text-muted small mb-0">Input CGPA, financial bracket, and localized origin under <a href="profile.php" class="text-decoration-none fw-bold" style="color: #002855;">Profile</a>.</p>
+                                <h6 class="fw-bold mb-1 dashboard-card-title">Populate Demographic Profile</h6>
+                                <p class="text-muted small mb-0">Input CGPA, financial bracket, and localized origin under <a href="profile.php" class="text-decoration-none fw-bold dashboard-link">Profile</a>.</p>
                             </div>
                         </li>
                         <li class="list-group-item px-0 py-3 border-bottom-0 d-flex pb-0">
-                            <span class="badge rounded-circle me-3 d-flex align-items-center justify-content-center text-white" style="width:25px;height:25px; background-color: #002855;">2</span>
+                            <span class="badge rounded-circle me-3 d-flex align-items-center justify-content-center text-white badge-step">2</span>
                             <div>
-                                <h6 class="fw-bold mb-1" style="color: #002855;">Execute Eligibility Algorithm</h6>
-                                <p class="text-muted small mb-0">Navigate to the <a href="results.php" class="text-decoration-none fw-bold" style="color: #002855;">Grants</a> tab to review verified funding matches specific to your parameters.</p>
+                                <h6 class="fw-bold mb-1 dashboard-card-title">Execute Eligibility Algorithm</h6>
+                                <p class="text-muted small mb-0">Navigate to the <a href="results.php" class="text-decoration-none fw-bold dashboard-link">Grants</a> tab to review verified funding matches specific to your parameters.</p>
                             </div>
                         </li>
                     </ul>
@@ -160,7 +160,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
                 <div class="mb-4">
                     <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['name']); ?>&background=002855&color=fff&size=120" class="rounded-circle shadow-sm border border-white border-4" alt="Profile Placeholder">
                 </div>
-                <h5 class="fw-bold mb-1" style="color: #002855;"><?php echo htmlspecialchars($_SESSION['name']); ?></h5>
+                <h5 class="fw-bold mb-1 dashboard-card-title"><?php echo htmlspecialchars($_SESSION['name']); ?></h5>
                 <p class="text-muted small mb-3">Student</p>
                 <div class="w-100 mt-2 px-3">
                     <a href="profile.php" class="btn btn-outline-secondary w-100 fw-bold border-2 rounded-pill"><i class="bi bi-pencil-square me-2"></i>Edit Parameters</a>

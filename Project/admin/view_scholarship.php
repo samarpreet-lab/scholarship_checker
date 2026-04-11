@@ -28,7 +28,7 @@ $data = $result->fetch_assoc();
 require_once '../includes/header.php';
 ?>
 
-<div class="card card-soft-border shadow-sm mx-auto mb-5" style="max-width: 800px;">
+<div class="card card-soft-border shadow-sm mx-auto mb-5 view-card">
     <div class="card-body p-5">
         <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
             <h2 class="card-title primary-color mb-0"><i class="bi bi-file-earmark-text me-2"></i>Scholarship Details</h2>
@@ -39,7 +39,7 @@ require_once '../includes/header.php';
 
         <div class="row g-4 mb-4">
             <div class="col-md-12">
-                <h3 class="fw-bold mb-1" style="color: #002855;"><?php echo htmlspecialchars($data['name']); ?></h3>
+                <h3 class="fw-bold mb-1 view-title"><?php echo htmlspecialchars($data['name']); ?></h3>
                 <p class="text-muted"><i class="bi bi-building"></i> Provided by <strong><?php echo htmlspecialchars($data['provider']); ?></strong></p>
                 <div class="p-3 bg-light rounded-3 mt-2">
                     <p class="mb-0 text-secondary"><?php echo nl2br(htmlspecialchars($data['description'] ?: 'No description available.')); ?></p>

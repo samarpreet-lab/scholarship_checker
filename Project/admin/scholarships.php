@@ -22,8 +22,8 @@ require_once '../includes/header.php';
     <!-- Page Header -->
     <div class="row mb-4">
         <div class="col-12 d-flex justify-content-between align-items-center">
-            <h2 class="fw-bold mb-0" style="color: #002855; font-size: 1.8rem;">Scholarships</h2>
-            <a href="add_scholarship.php" class="btn btn-primary fw-bold rounded-pill px-4 shadow-sm" style="background-color: #002855;">
+            <h2 class="fw-bold mb-0 scholarships-title">Scholarships</h2>
+            <a href="add_scholarship.php" class="btn btn-primary fw-bold rounded-pill px-4 shadow-sm scholarships-btn-add" style="background-color: var(--brand);">
                 <i class="bi bi-plus-circle me-2"></i>+ Add New
             </a>
         </div>
@@ -37,7 +37,7 @@ require_once '../includes/header.php';
                     <?php if (empty($scholarships)): ?>
                         <div class="alert alert-info border-0 rounded-4 p-4" role="alert">
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-info-circle me-3" style="font-size: 1.5rem;"></i>
+                                <i class="bi bi-info-circle me-3 scholarships-icon"></i>
                                 <div>
                                     <h5 class="mb-1">No Scholarships Yet</h5>
                                     <p class="mb-0 text-muted">No scholarships have been added to the system. <a href="add_scholarship.php" class="text-decoration-none fw-bold">Add your first scholarship</a> to get started.</p>
@@ -46,23 +46,23 @@ require_once '../includes/header.php';
                         </div>
                     <?php else: ?>
                         <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead style="background-color: #f8f9fb; border-bottom: 2px solid #e9ecef;">
+                            <table class="table table-hover mb-0 scholarships-table">
+                                <thead>
                                     <tr>
-                                        <th class="fw-bold text-muted small text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em; color: #495057 !important;">Scholarships Name</th>
-                                        <th class="fw-bold text-muted small text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em; color: #495057 !important;">Provider</th>
-                                        <th class="fw-bold text-muted small text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em; color: #495057 !important;">Amount (₹)</th>
-                                        <th class="fw-bold text-muted small text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em; color: #495057 !important;">Deadline</th>
-                                        <th class="fw-bold text-muted small text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em; color: #495057 !important;">Actions</th>
+                                        <th class="scholarships-th">Scholarships Name</th>
+                                        <th class="scholarships-th">Provider</th>
+                                        <th class="scholarships-th">Amount (₹)</th>
+                                        <th class="scholarships-th">Deadline</th>
+                                        <th class="scholarships-th">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($scholarships as $s): 
                                         $isUrgent = strtotime($s['deadline']) <= strtotime('+30 days');
                                     ?>
-                                    <tr style="border-bottom: 1px solid #e9ecef; vertical-align: middle;">
+                                    <tr class="scholarships-row">
                                         <td>
-                                            <div class="fw-bold" style="color: #002855; font-size: 0.95rem;">
+                                            <div class="scholarships-name">
                                                 <?php echo htmlspecialchars($s['name']); ?>
                                             </div>
                                             <small class="text-muted d-block mt-1">ID: #<?php echo $s['id']; ?></small>
@@ -71,7 +71,7 @@ require_once '../includes/header.php';
                                             <span class="text-muted"><?php echo htmlspecialchars($s['provider']); ?></span>
                                         </td>
                                         <td>
-                                            <span class="fw-bold" style="color: #28a745; font-size: 0.95rem;">₹<?php echo number_format($s['amount']); ?></span>
+                                            <span class="scholarships-amount">₹<?php echo number_format($s['amount']); ?></span>
                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
@@ -107,12 +107,5 @@ require_once '../includes/header.php';
         </div>
     </div>
 </div>
-
-<style>
-    .table tbody tr:hover {
-        background-color: #f8f9fb !important;
-        transition: background-color 0.2s ease;
-    }
-</style>
 
 <?php require_once '../includes/footer.php'; ?>
