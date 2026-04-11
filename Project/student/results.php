@@ -138,7 +138,7 @@ $sch_result = $conn->query($sch_query);
                                 </div>
                                 
                                 <!-- Apply Button -->
-                                <a href="#apply-<?php echo $scholarship['id']; ?>" class="btn text-white fw-bold" 
+                                <a href="<?php echo htmlspecialchars($scholarship['scholarship_link']); ?>" target="_blank" class="btn text-white fw-bold" 
                                    style="background-color: #002855; padding: 0.6rem 1.2rem; border-radius: 0.4rem; font-size: 0.9rem; transition: all 0.3s; white-space: nowrap;">
                                     Apply Now →
                                 </a>

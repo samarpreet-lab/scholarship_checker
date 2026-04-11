@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $amount      = intval($_POST['amount']);
     $provider    = trim($_POST['provider']);
     $deadline    = $_POST['deadline'];
+    $scholarship_link = trim($_POST['scholarship_link']);
 
     // Criteria fields
     $min_cgpa      = floatval($_POST['minimum_cgpa']);
@@ -31,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $req_course    = trim($_POST['required_course']);
     $req_state     = trim($_POST['required_state']);
 
-    if (empty($name) || empty($provider) || empty($deadline)) {
+    if (empty($name) || empty($provider) || empty($deadline) || empty($scholarship_link)) {
         $error = "Please fill all required fields.";
     } else {
-        $update_scholarship = "UPDATE scholarships SET name='$name', description='$description', amount='$amount', provider='$provider', deadline='$deadline' WHERE id=$id";
+        $update_scholarship = "UPDATE scholarships SET name='$name', description='$description', amount='$amount', provider='$provider', deadline='$deadline', scholarship_link='$scholarship_link' WHERE id=$id";
         
         if ($conn->query($update_scholarship) === TRUE) {
             $update_criteria = "UPDATE scholarship_criteria SET minimum_cgpa='$min_cgpa', maximum_income='$max_income', required_course='$req_course', required_state='$req_state' WHERE scholarship_id=$id";
@@ -101,6 +102,13 @@ require_once '../includes/header.php';
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Application Deadline *</label>
                     <input type="date" name="deadline" class="form-control" required value="<?php echo htmlspecialchars($data['deadline']); ?>">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label class="form-label">Scholarship Link *</label>
+                    <input type="url" name="scholarship_link" class="form-control" required value="<?php echo htmlspecialchars($data['scholarship_link']); ?>" placeholder="e.g. https://www.scholarship.example.com/apply">
                 </div>
             </div>
 

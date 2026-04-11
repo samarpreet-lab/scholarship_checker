@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $amount      = intval($_POST['amount']);
     $provider    = trim($_POST['provider']);
     $deadline    = $_POST['deadline'];
+    $scholarship_link = trim($_POST['scholarship_link']);
 
     // Criteria fields
     $min_cgpa      = floatval($_POST['minimum_cgpa']);
@@ -24,11 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $req_course    = trim($_POST['required_course']);
     $req_state     = trim($_POST['required_state']);
 
-    if (empty($name) || empty($provider) || empty($deadline)) {
+    if (empty($name) || empty($provider) || empty($deadline) || empty($scholarship_link)) {
         $error = "Please fill all required fields.";
     } else {
         // Insert scholarship using basic query
-        $insert_scholarship = "INSERT INTO scholarships (name, description, amount, provider, deadline) VALUES ('$name', '$description', '$amount', '$provider', '$deadline')";
+        $insert_scholarship = "INSERT INTO scholarships (name, description, amount, provider, deadline, scholarship_link) VALUES ('$name', '$description', '$amount', '$provider', '$deadline', '$scholarship_link')";
         if ($conn->query($insert_scholarship) === TRUE) {
             $scholarship_id = $conn->insert_id;
 
@@ -78,12 +79,12 @@ require_once '../includes/header.php';
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Amount (₹) *</label>
-                    <input type="number" name="amount" class="form-control" min="0" required placeholder="e.g. 50000">
-                </div>
-                <div class="col-md-6 mb-3">
                     <label class="form-label">Application Deadline *</label>
                     <input type="date" name="deadline" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Scholarship Link *</label>
+                    <input type="url" name="scholarship_link" class="form-control" required placeholder="e.g. https://www.scholarship.example.com/apply">
                 </div>
             </div>
 

@@ -46,6 +46,7 @@ $scholarships_table = "CREATE TABLE IF NOT EXISTS scholarships (
     amount INT NOT NULL,
     provider VARCHAR(100),
     deadline DATE,
+    scholarship_link VARCHAR(500),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 $conn->query($scholarships_table);
@@ -66,4 +67,5 @@ $admin_check = $conn->query("SELECT id FROM users WHERE email='admin@scholarship
 if ($admin_check->num_rows == 0) {
     $conn->query("INSERT INTO users (name, email, password, role) VALUES ('Admin', 'admin@scholarship.edu', 'admin123', 'admin')");
 }
+
 ?>
