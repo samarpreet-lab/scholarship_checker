@@ -21,13 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $confirm) {
         $error = "Passwords do not match.";
     } else {
-        // Escape strings to prevent SQL injection
-        $safe_name     = $conn->real_escape_string($name);
-        $safe_email    = $conn->real_escape_string($email);
-        $safe_password = $conn->real_escape_string($password);
-
         // Check if email already exists
-        $query = "SELECT id FROM users WHERE email = '$safe_email'";
+        $query = "SELECT id FROM users WHERE email = '$email'";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
@@ -35,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
 
             // Insert new user
-            $insert_query = "INSERT INTO users (name, email, password, role) VALUES ('$safe_name', '$safe_email', '$safe_password', 'student')";
+            $insert_query = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', 'student')";
             $conn->query($insert_query);
             $new_id = $conn->insert_id;
 

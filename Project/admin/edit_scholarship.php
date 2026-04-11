@@ -34,13 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($name) || empty($provider) || empty($deadline)) {
         $error = "Please fill all required fields.";
     } else {
-        $name        = $conn->real_escape_string($name);
-        $description = $conn->real_escape_string($description);
-        $provider    = $conn->real_escape_string($provider);
-        $deadline    = $conn->real_escape_string($deadline);
-        $req_course  = $conn->real_escape_string($req_course);
-        $req_state   = $conn->real_escape_string($req_state);
-
         $update_scholarship = "UPDATE scholarships SET name='$name', description='$description', amount='$amount', provider='$provider', deadline='$deadline' WHERE id=$id";
         
         if ($conn->query($update_scholarship) === TRUE) {

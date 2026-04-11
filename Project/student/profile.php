@@ -14,8 +14,8 @@ $error   = '';
 // Save profile
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cgpa      = floatval($_POST['cgpa']);
-    $course    = $conn->real_escape_string($_POST['course']);
-    $state     = $conn->real_escape_string($_POST['state']);
+    $course    = $_POST['course'];
+    $state     = $_POST['state'];
     $income    = intval($_POST['family_income']);
 
     // Validate CGPA range
