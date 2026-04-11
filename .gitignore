@@ -1,6 +1,9 @@
 # Ignore Markdown files
 *.md
 
+# Ignore the reports folder entirely
+reports/
+
 # Ignore IDE/editor settings
 .vscode/
 
