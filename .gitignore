@@ -3,6 +3,7 @@
 
 # Ignore the reports folder entirely
 reports/
+stitch_scholarship_checker/
 
 # Ignore IDE/editor settings
 .vscode/
