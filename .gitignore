@@ -1,0 +1,13 @@
+# Ignore Markdown files
+*.md
+
+# Ignore IDE/editor settings
+.vscode/
+
+# Ignore common system files
+.DS_Store
+Thumbs.db
+
+# Ignore local development logs and environment files
+*.log
+*.env
