@@ -11,10 +11,6 @@ if ($is_authenticated && !$is_auth_page):
 
 </div> <!-- End container-fluid p-0 -->
 
-<?php 
-// Show footer mainly for login/register pages
-if ($current_page === 'index.php' || $current_page === 'register.php'):
-?>
 <footer class="w-100 py-3 mt-5 footer-main">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div class="footer-brand">Academic Editorial Portal</div>
@@ -22,14 +18,13 @@ if ($current_page === 'index.php' || $current_page === 'register.php'):
             <a href="#" class="text-decoration-none text-muted small text-uppercase fw-bold footer-link">Privacy Policy</a>
             <a href="#" class="text-decoration-none text-muted small text-uppercase fw-bold footer-link">Terms of Service</a>
         </div>
-        <div class="small text-muted footer-copyright">© 2024 Academic Editorial Scholarship Fund.</div>
+        <div class="small text-muted footer-copyright">© 2026 Academic Editorial Scholarship Fund.</div>
     </div>
 </footer>
-<?php endif; ?>
 
 <!-- Bootstrap JS Code -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
+<!-- <script>
     // Sidebar toggle for mobile
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.querySelector('.sidebar');
@@ -44,6 +39,6 @@ if ($current_page === 'index.php' || $current_page === 'register.php'):
             }
         });
     }
-</script>
+</script> -->
 </body>
 </html>

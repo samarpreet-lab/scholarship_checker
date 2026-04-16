@@ -299,6 +299,7 @@ a:not(.btn):not(.dropdown-item):hover {
 .main-content {
     margin-left: 240px;
     margin-top: 70px;
+    padding-bottom: 4rem;
 }
 
 /* ============================= */
@@ -387,6 +388,10 @@ table tbody tr {
     .main-content {
         margin-left: 0;
     }
+
+    .footer-main {
+        margin-left: 0;
+    }
 }
 
 /* ============================= */
@@ -442,6 +447,9 @@ table tbody tr {
 
 .footer-main {
     background: transparent;
+    margin-left: 110px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .footer-brand {
