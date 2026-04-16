@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../index.php");
@@ -18,7 +20,6 @@ if (!isset($_GET['id'])) {
 $id = intval($_GET['id']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Scholarship fields
     $name        = trim($_POST['name']);
     $description = trim($_POST['description']);
     $amount      = intval($_POST['amount']);
@@ -70,45 +71,45 @@ require_once '../includes/header.php';
     <div class="card-body">
         <h2 class="card-title primary-color mb-4"><i class="bi bi-pencil-square me-2"></i>Edit Scholarship</h2>
 
-        <?php if ($error): ?>
+        <?php if ($error) { ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
-        <?php endif; ?>
-        <?php if ($success): ?>
+        <?php } ?>
+        <?php if ($success) { ?>
             <div class="alert alert-success"><?php echo $success; ?></div>
-        <?php endif; ?>
+        <?php } ?>
 
         <form method="POST">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Scholarship Name *</label>
-                    <input type="text" name="name" class="form-control" required value="<?php echo htmlspecialchars($data['name']); ?>">
+                    <input type="text" name="name" class="form-control" required value="<?php echo $data['name']; ?>">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Provider / Organization *</label>
-                    <input type="text" name="provider" class="form-control" required value="<?php echo htmlspecialchars($data['provider']); ?>">
+                    <input type="text" name="provider" class="form-control" required value="<?php echo $data['provider']; ?>">
                 </div>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <textarea name="description" class="form-control" rows="3"><?php echo htmlspecialchars($data['description']); ?></textarea>
+                <textarea name="description" class="form-control" rows="3"><?php echo $data['description']; ?></textarea>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Amount (₹) *</label>
-                    <input type="number" name="amount" class="form-control" min="0" required value="<?php echo htmlspecialchars($data['amount']); ?>">
+                    <input type="number" name="amount" class="form-control" min="0" required value="<?php echo $data['amount']; ?>">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Application Deadline *</label>
-                    <input type="date" name="deadline" class="form-control" required value="<?php echo htmlspecialchars($data['deadline']); ?>">
+                    <input type="date" name="deadline" class="form-control" required value="<?php echo $data['deadline']; ?>">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12 mb-3">
                     <label class="form-label">Scholarship Link *</label>
-                    <input type="url" name="scholarship_link" class="form-control" required value="<?php echo htmlspecialchars($data['scholarship_link']); ?>" placeholder="e.g. https://www.scholarship.example.com/apply">
+                    <input type="url" name="scholarship_link" class="form-control" required value="<?php echo $data['scholarship_link']; ?>" placeholder="e.g. https://www.scholarship.example.com/apply">
                 </div>
             </div>
 
@@ -118,22 +119,22 @@ require_once '../includes/header.php';
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Minimum CGPA Required</label>
-                    <input type="number" name="minimum_cgpa" class="form-control" step="0.1" min="0" max="10" required value="<?php echo htmlspecialchars($data['minimum_cgpa'] ?? 0); ?>">
+                    <input type="number" name="minimum_cgpa" class="form-control" step="0.1" min="0" max="10" required value="<?php echo $data['minimum_cgpa'] ?? 0; ?>">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Max Annual Family Income (₹)</label>
-                    <input type="number" name="maximum_income" class="form-control" required value="<?php echo htmlspecialchars($data['maximum_income'] ?? 1000000); ?>">
+                    <input type="number" name="maximum_income" class="form-control" required value="<?php echo $data['maximum_income'] ?? 1000000; ?>">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Required Course (or "Any")</label>
-                    <input type="text" name="required_course" class="form-control" required value="<?php echo htmlspecialchars($data['required_course'] ?? 'Any'); ?>">
+                    <input type="text" name="required_course" class="form-control" required value="<?php echo $data['required_course'] ?? 'Any'; ?>">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Required State (or "Any")</label>
-                    <input type="text" name="required_state" class="form-control" required value="<?php echo htmlspecialchars($data['required_state'] ?? 'Any'); ?>">
+                    <input type="text" name="required_state" class="form-control" required value="<?php echo $data['required_state'] ?? 'Any'; ?>">
                 </div>
             </div>
 

@@ -39,7 +39,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
     <!-- Dashboard Header Area -->
     <div class="row align-items-center mb-5">
         <div class="col-md-8">
-            <h1 class="display-6 fw-bold mb-1 dashboard-title">Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h1>
+            <h1 class="display-6 fw-bold mb-1 dashboard-title">Welcome, <?php echo $_SESSION['name']; ?></h1>
             <p class="text-muted mb-0 lead dashboard-subtitle">Academic Editorial Scholarship Fund Portal Overview</p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
@@ -59,13 +59,13 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
                         </div>
                         <span class="text-muted fw-bold small text-uppercase">Profile Status</span>
                     </div>
-                    <?php if ($student): ?>
+                    <?php if ($student) { ?>
                         <h2 class="display-5 fw-bold mb-1 dashboard-stat-title">Complete</h2>
                         <p class="text-muted small mb-0 fw-bold"><span class="text-success"><i class="bi bi-check-circle-fill"></i> Verified</span> Academic Profile</p>
-                    <?php else: ?>
+                    <?php } else { ?>
                         <h2 class="display-5 fw-bold mb-1 text-danger">Pending</h2>
                         <p class="text-muted small mb-0 fw-bold"><a href="profile.php" class="text-danger">Update CV data</a> to unlock grants</p>
-                    <?php endif; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
                     <h4 class="fw-bold mb-0 dashboard-card-title">Portal Guidelines</h4>
                 </div>
                 <div class="card-body p-4">
-                    <?php if (!$student): ?>
+                    <?php if (!$student) { ?>
                         <div class="p-4 rounded-4 text-center mb-3 bg-light border border-danger border-2 border-opacity-25">
                             <h5 class="fw-bold text-danger mb-2"><i class="bi bi-exclamation-triangle-fill me-2"></i>Action Required</h5>
                             <p class="text-muted text-start mb-3 guidelines-description">You must complete your Academic Curriculum Vitae (Profile) before the system can match you with eligible institutional funding. Your demographic and academic parameters are required to run the matching algorithm.</p>
@@ -122,17 +122,17 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
                                 <a href="profile.php" class="btn btn-danger fw-bold shadow-sm px-4 rounded-pill">Complete CV Requirements Now</a>
                             </div>
                         </div>
-                    <?php else: ?>
+                    <?php } else { ?>
                         <div class="d-flex align-items-start mb-4 bg-light p-3 rounded-4">
                             <div class="me-3 mt-1">
                                 <h4 class="text-success"><i class="bi bi-check-circle-fill"></i></h4>
                             </div>
                             <div>
                                 <h6 class="fw-bold mb-1 dashboard-card-title">Profile Up to Date</h6>
-                                <p class="text-muted small mb-0">Your demographic information, enrolled program (<?php echo htmlspecialchars(!empty($student['course']) ? $student['course'] : 'Not set'); ?>), and financial parameters are configured and active.</p>
+                                <p class="text-muted small mb-0">Your demographic information, enrolled program (<?php echo !empty($student['course']) ? $student['course'] : 'Not set'; ?>), and financial parameters are configured and active.</p>
                             </div>
                         </div>
-                    <?php endif; ?>
+                    <?php } ?>
                     
                     <h6 class="fw-bold text-uppercase mt-4 mb-3 guidelines-heading">Next Steps</h6>
                     <ul class="list-group list-group-flush border-0 mb-0">
@@ -158,9 +158,9 @@ if ($student && isset($student['cgpa']) && isset($student['course'])) {
         <div class="col-md-4">
             <div class="card card-soft-border shadow-sm rounded-4 text-center h-100 bg-light p-4 d-flex flex-column justify-content-center align-items-center">
                 <div class="mb-4">
-                    <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['name']); ?>&background=002855&color=fff&size=120" class="rounded-circle shadow-sm border border-white border-4" alt="Profile Placeholder">
+                    <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['name']); ?>&background=002855&color=fff&size=120" class="rounded-circle shadow-sm border border-white border-4">
                 </div>
-                <h5 class="fw-bold mb-1 dashboard-card-title"><?php echo htmlspecialchars($_SESSION['name']); ?></h5>
+                <h5 class="fw-bold mb-1 dashboard-card-title"><?php echo $_SESSION['name']; ?></h5>
                 <p class="text-muted small mb-3">Student</p>
                 <div class="w-100 mt-2 px-3">
                     <a href="profile.php" class="btn btn-outline-secondary w-100 fw-bold border-2 rounded-pill"><i class="bi bi-pencil-square me-2"></i>Edit Parameters</a>

@@ -1,25 +1,23 @@
 <?php
+
 session_start();
 require_once 'config/db.php';
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email    = trim(strtolower($_POST['email']));
+    $email    = $_POST['email'];
     $password = $_POST['password'];
 
-    // Fetch user by using simple Query
     $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        // Set session
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['name']    = $user['name'];
         $_SESSION['role']    = $user['role'];
 
-        // Redirect based on role
         if ($user['role'] === 'admin') {
             header("Location: admin/dashboard.php");
         } else {
@@ -53,11 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p class="text-muted small">Secure authentication for faculty & students.</p>
             </div>
 
-            <?php if ($error): ?>
+            <?php if ($error) { ?>
                 <div class="alert alert-danger py-3 px-4 rounded-3 mb-4 small fw-bold border-0 d-flex align-items-center alert-danger-custom">
                     <i class="bi bi-exclamation-triangle me-2"></i><?php echo $error; ?>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
 
             <form method="POST">
                 <div class="mb-4">
@@ -85,5 +83,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-
-<?php require_once 'includes/footer.php'; ?>

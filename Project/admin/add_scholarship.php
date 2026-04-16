@@ -53,12 +53,12 @@ require_once '../includes/header.php';
     <div class="card-body">
         <h2 class="card-title primary-color mb-4">Add New Scholarship</h2>
 
-        <?php if ($error): ?>
+        <?php if ($error) { ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
-        <?php endif; ?>
-        <?php if ($success): ?>
+        <?php } ?>
+        <?php if ($success) { ?>
             <div class="alert alert-success"><?php echo $success; ?></div>
-        <?php endif; ?>
+        <?php } ?>
 
         <form method="POST">
             <div class="row">

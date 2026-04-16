@@ -1,4 +1,7 @@
 <?php
+// ⚠️ SECURITY VULNERABILITIES DEMONSTRATION ⚠️
+// DO NOT USE IN PRODUCTION
+
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'student') {
     header("Location: ../index.php");
@@ -11,8 +14,9 @@ $user_id = $_SESSION['user_id'];
 $success = '';
 $error   = '';
 
-// Save profile
+// Save profile - VULNERABILITY: No CSRF token validation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // VULNERABILITY: No input sanitization beyond type casting
     $cgpa      = floatval($_POST['cgpa']);
     $course    = $_POST['course'];
     $state     = $_POST['state'];
@@ -24,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (empty($course) || empty($state)) {
         $error = "All fields are required.";
     } else {
+        // VULNERABILITY: SQL INJECTION - User input directly in UPDATE query
         $update_query = "UPDATE student_profiles SET cgpa='$cgpa', course='$course', state_of_origin='$state', family_income='$income' WHERE user_id='$user_id'";
         if ($conn->query($update_query) === TRUE) {
             $success = "Profile updated successfully.";
@@ -50,28 +55,28 @@ require_once '../includes/header.php';
                     <h4 class="fw-bold mb-0 profile-card-title">📋 Your Saved Profile</h4>
                 </div>
                 <div class="card-body p-4">
-                    <?php if ($profile):  ?>
+                    <?php if ($profile) { ?>
                         <div class="mb-4">
                             <small class="text-uppercase fw-bold text-secondary profile-field-label">CGPA</small>
                             <p class="fw-bold mb-0 profile-field-value"><?php echo (isset($profile['cgpa']) && $profile['cgpa'] !== null) ? $profile['cgpa'] : 'Not set'; ?></p>
                         </div>
                         <div class="mb-4">
                             <small class="text-uppercase fw-bold text-secondary profile-field-label">Course / Program</small>
-                            <p class="fw-bold mb-0 profile-field-value"><?php echo !empty($profile['course']) ? htmlspecialchars($profile['course']) : 'Not set'; ?></p>
+                            <p class="fw-bold mb-0 profile-field-value"><?php echo !empty($profile['course']) ? $profile['course'] : 'Not set'; ?></p>
                         </div>
                         <div class="mb-4">
                             <small class="text-uppercase fw-bold text-secondary profile-field-label">State of Origin</small>
-                            <p class="fw-bold mb-0 profile-field-value"><?php echo !empty($profile['state_of_origin']) ? htmlspecialchars($profile['state_of_origin']) : 'Not set'; ?></p>
+                            <p class="fw-bold mb-0 profile-field-value"><?php echo !empty($profile['state_of_origin']) ? $profile['state_of_origin'] : 'Not set'; ?></p>
                         </div>
                         <div>
                             <small class="text-uppercase fw-bold text-secondary profile-field-label">Annual Family Income</small>
                             <p class="fw-bold mb-0 profile-field-value">₹<?php echo number_format($profile['family_income'] ?? 0); ?></p>
                         </div>
-                    <?php else: ?>
+                    <?php } else { ?>
                         <div class="alert alert-info mb-0">
                             <i class="bi bi-info-circle me-2"></i>No profile data saved yet. Fill and save the form on the right to get started!
                         </div>
-                    <?php endif; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -83,16 +88,16 @@ require_once '../includes/header.php';
                     <h4 class="fw-bold mb-0 profile-card-title">✏️ Update Your Profile</h4>
                 </div>
                 <div class="card-body p-4">
-                    <?php if ($error): ?>
+                    <?php if ($error) { ?>
                         <div class="alert alert-danger py-3 px-4 rounded-3 mb-4 small fw-bold border-0 d-flex align-items-center alert-danger-custom">
                             <i class="bi bi-exclamation-triangle me-2"></i><?php echo $error; ?>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($success): ?>
+                    <?php } ?>
+                    <?php if ($success) { ?>
                         <div class="alert alert-success py-3 px-4 rounded-3 mb-4 small fw-bold border-0 d-flex align-items-center alert-success-custom">
                             <i class="bi bi-check-circle me-2"></i><?php echo $success; ?>
                         </div>
-                    <?php endif; ?>
+                    <?php } ?>
 
                     <form method="POST">
                         <div class="mb-4">
@@ -104,13 +109,13 @@ require_once '../includes/header.php';
                         <div class="mb-4">
                             <label class="form-label text-uppercase fw-bold text-secondary mb-3 form-label-custom">Course / Program</label>
                             <input type="text" name="course" class="form-control form-control-lg border-0 bg-white shadow-sm rounded-3 form-input-custom" placeholder="e.g., B.Tech CSE, M.Sc Physics"
-                                   value="<?php echo htmlspecialchars($profile['course'] ?? ''); ?>" required>
+                                   value="<?php echo $profile['course'] ?? ''; ?>" required>
                         </div>
 
                         <div class="mb-4">
                             <label class="form-label text-uppercase fw-bold text-secondary mb-3 form-label-custom">State of Origin</label>
                             <input type="text" name="state" class="form-control form-control-lg border-0 bg-white shadow-sm rounded-3 form-input-custom" placeholder="e.g., Maharashtra, Tamil Nadu"
-                                   value="<?php echo htmlspecialchars($profile['state_of_origin'] ?? ''); ?>" required>
+                                   value="<?php echo $profile['state_of_origin'] ?? ''; ?>" required>
                         </div>
 
                         <div class="mb-5">

@@ -544,6 +544,10 @@ table tbody tr {
 /* Dashboard Styles */
 /* ============================= */
 
+/* ============================= */
+/* Dashboard Styles */
+/* ============================= */
+
 .dashboard-title {
     color: var(--brand);
 }
@@ -632,6 +636,10 @@ table tbody tr {
 .scholarship-card-eligible {
     border-left: 4px solid #28a745;
 }
+
+/* ============================= */
+/* Admin Dashboard Styles */
+/* ============================= */
 
 /* ============================= */
 /* Admin Dashboard Styles */

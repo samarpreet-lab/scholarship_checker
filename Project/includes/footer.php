@@ -4,10 +4,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
 $is_auth_page = ($current_page === 'index.php' || $current_page === 'register.php');
 $is_authenticated = isset($_SESSION['user_id']);
 
-if ($is_authenticated && !$is_auth_page):
+if ($is_authenticated && !$is_auth_page) {
 ?>
 </div> <!-- End main-content wrapper -->
-<?php endif; ?>
+<?php } ?>
 
 </div> <!-- End container-fluid p-0 -->
 

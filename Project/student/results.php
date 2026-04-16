@@ -96,7 +96,7 @@ $sch_result = $conn->query($sch_query);
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <div>
                                     <small class="text-muted d-block mb-1" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                                        <i class="bi bi-file-earmark me-1"></i><?php echo htmlspecialchars($scholarship['provider']); ?>
+                                        <i class="bi bi-file-earmark me-1"></i><?php echo $scholarship['provider']; ?>
                                     </small>
                                 </div>
                                 <div class="text-end">
@@ -109,12 +109,12 @@ $sch_result = $conn->query($sch_query);
                             
                             <!-- Title -->
                             <h5 class="card-title fw-bold mb-3" style="color: #002855; font-size: 1.1rem; line-height: 1.4;">
-                                <?php echo htmlspecialchars($scholarship['name']); ?>
+                                <?php echo $scholarship['name']; ?>
                             </h5>
                             
                             <!-- Description -->
                             <p class="text-muted mb-4 flex-grow-1" style="font-size: 0.9rem; line-height: 1.6;">
-                                <?php echo htmlspecialchars($scholarship['description']); ?>
+                                <?php echo $scholarship['description']; ?>
                             </p>
                             
                             <!-- Footer: Deadline, Status, Button -->
@@ -138,7 +138,7 @@ $sch_result = $conn->query($sch_query);
                                 </div>
                                 
                                 <!-- Apply Button -->
-                                <a href="<?php echo htmlspecialchars($scholarship['scholarship_link']); ?>" target="_blank" class="btn text-white fw-bold" 
+                                <a href="<?php echo $scholarship['scholarship_link']; ?>" target="_blank" class="btn text-white fw-bold" 
                                    style="background-color: #002855; padding: 0.6rem 1.2rem; border-radius: 0.4rem; font-size: 0.9rem; transition: all 0.3s; white-space: nowrap;">
                                     Apply Now →
                                 </a>
@@ -150,7 +150,7 @@ $sch_result = $conn->query($sch_query);
             }
         } else {
             echo '<div class="col-12">';
-            echo '<div class="alert alert-info alert-dismissible fade show" role="alert">';
+            echo '<div class="alert alert-info alert-dismissible fade show">';
             echo '<strong>No scholarships available</strong> matching your current profile. Keep improving your CGPA and profile to unlock more opportunities!';
             echo '</div>';
             echo '</div>';

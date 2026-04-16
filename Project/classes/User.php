@@ -12,12 +12,9 @@ class User {
         $this->password = $password;
     }
 
-    public function getId()    { return $this->id; }
-    public function getName()  { return $this->name; }
-    public function getEmail() { return $this->email; }
-
-    public function __destruct() {
-        // destructor - no cleanup needed here
-    }
+    public function getId()       { return $this->id; }
+    public function getName()     { return $this->name; }
+    public function getEmail()    { return $this->email; }
+    public function getPassword() { return $this->password; }
 }
 ?>

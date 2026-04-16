@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once 'config/db.php';
 
@@ -6,22 +7,16 @@ $error   = '';
 $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name     = trim($_POST['name']);
-    $email    = trim(strtolower($_POST['email']));
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
     $password = $_POST['password'];
     $confirm  = $_POST['confirm_password'];
 
-    // Basic validation using string and built-in functions
     if (empty($name) || empty($email) || empty($password)) {
         $error = "All fields are required.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = "Invalid email format.";
-    } elseif (strlen($password) < 6) {
-        $error = "Password must be at least 6 characters.";
     } elseif ($password !== $confirm) {
         $error = "Passwords do not match.";
     } else {
-        // Check if email already exists
         $query = "SELECT id FROM users WHERE email = '$email'";
         $result = $conn->query($query);
 
@@ -29,16 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Email already registered.";
         } else {
 
-            // Insert new user
+            
             $insert_query = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', 'student')";
             $conn->query($insert_query);
             $new_id = $conn->insert_id;
 
-            // Create empty student profile
             $profile_query = "INSERT INTO student_profiles (user_id) VALUES ($new_id)";
             $conn->query($profile_query);
 
-            // Auto-login the user and redirect to dashboard
             $_SESSION['user_id'] = $new_id;
             $_SESSION['name']    = $name;
             $_SESSION['role']    = 'student';
@@ -80,11 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p class="text-muted small">Enter your details to register for the portal.</p>
             </div>
 
-            <?php if ($error): ?>
+            <?php if ($error) { ?>
                 <div class="alert alert-danger py-3 px-4 rounded-3 mb-4 small fw-bold border-0 d-flex align-items-center alert-danger-custom">
                     <i class="bi bi-exclamation-triangle me-2"></i><?php echo $error; ?>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
 
             <form method="POST">
                 <div class="mb-4">
@@ -127,5 +120,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-
-<?php require_once 'includes/footer.php'; ?>

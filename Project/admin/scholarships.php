@@ -34,8 +34,8 @@ require_once '../includes/header.php';
         <div class="col-12">
             <div class="card border-0 shadow-sm rounded-4">
                 <div class="card-body p-4">
-                    <?php if (empty($scholarships)): ?>
-                        <div class="alert alert-info border-0 rounded-4 p-4" role="alert">
+                    <?php if (empty($scholarships)) { ?>
+                        <div class="alert alert-info border-0 rounded-4 p-4">
                             <div class="d-flex align-items-center">
                                 <i class="bi bi-info-circle me-3 scholarships-icon"></i>
                                 <div>
@@ -44,7 +44,7 @@ require_once '../includes/header.php';
                                 </div>
                             </div>
                         </div>
-                    <?php else: ?>
+                    <?php } else { ?>
                         <div class="table-responsive">
                             <table class="table table-hover mb-0 scholarships-table">
                                 <thead>
@@ -57,27 +57,27 @@ require_once '../includes/header.php';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($scholarships as $s): 
+                                    <?php foreach ($scholarships as $s) { 
                                         $isUrgent = strtotime($s['deadline']) <= strtotime('+30 days');
                                     ?>
                                     <tr class="scholarships-row">
                                         <td>
                                             <div class="scholarships-name">
-                                                <?php echo htmlspecialchars($s['name']); ?>
+                                                <?php echo $s['name']; ?>
                                             </div>
                                             <small class="text-muted d-block mt-1">ID: #<?php echo $s['id']; ?></small>
                                         </td>
                                         <td>
-                                            <span class="text-muted"><?php echo htmlspecialchars($s['provider']); ?></span>
+                                            <span class="text-muted"><?php echo $s['provider']; ?></span>
                                         </td>
                                         <td>
                                             <span class="scholarships-amount">₹<?php echo number_format($s['amount']); ?></span>
                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
-                                                <?php if ($isUrgent): ?>
+                                                <?php if ($isUrgent) { ?>
                                                     <span class="badge bg-danger small">Urgent</span>
-                                                <?php endif; ?>
+                                                <?php } ?>
                                                 <span class="<?php echo $isUrgent ? 'fw-bold text-danger' : 'text-muted'; ?>">
                                                     <?php echo date('d M Y', strtotime($s['deadline'])); ?>
                                                 </span>
@@ -85,23 +85,23 @@ require_once '../includes/header.php';
                                         </td>
                                         <td>
                                             <div class="d-flex gap-2">
-                                                <a href="view_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-secondary text-dark shadow-sm fw-bold small rounded-pill" title="View">
+                                                <a href="view_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-secondary text-dark shadow-sm fw-bold small rounded-pill">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <a href="edit_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-secondary text-dark shadow-sm fw-bold small rounded-pill" title="Edit">
+                                                <a href="edit_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-secondary text-dark shadow-sm fw-bold small rounded-pill">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <a href="delete_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-danger text-danger shadow-sm fw-bold small rounded-pill" title="Delete" onclick="return confirm('Are you sure you want to delete this scholarship?')">
+                                                <a href="delete_scholarship.php?id=<?php echo $s['id']; ?>" class="btn btn-sm btn-light border border-danger text-danger shadow-sm fw-bold small rounded-pill" onclick="return confirm('Are you sure you want to delete this scholarship?')">
                                                     <i class="bi bi-trash"></i>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php endforeach; ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
-                    <?php endif; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>

@@ -1,4 +1,7 @@
 <?php
+// ⚠️ SECURITY VULNERABILITIES DEMONSTRATION ⚠️
+// DO NOT USE IN PRODUCTION - FOR EDUCATIONAL PURPOSES ONLY
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
@@ -62,9 +65,10 @@ $criteria_table = "CREATE TABLE IF NOT EXISTS scholarship_criteria (
 )";
 $conn->query($criteria_table);
 
-// Insert default admin if not exists (beginner simple string match, no hashing for simplicity)
+// Insert default admin if not exists - VULNERABILITY: Storing plain text passwords
 $admin_check = $conn->query("SELECT id FROM users WHERE email='admin@scholarship.edu'");
 if ($admin_check->num_rows == 0) {
+    // VULNERABILITY: Plain text password stored (no password_hash)
     $conn->query("INSERT INTO users (name, email, password, role) VALUES ('Admin', 'admin@scholarship.edu', 'admin123', 'admin')");
 }
 

@@ -39,10 +39,10 @@ require_once '../includes/header.php';
 
         <div class="row g-4 mb-4">
             <div class="col-md-12">
-                <h3 class="fw-bold mb-1 view-title"><?php echo htmlspecialchars($data['name']); ?></h3>
-                <p class="text-muted"><i class="bi bi-building"></i> Provided by <strong><?php echo htmlspecialchars($data['provider']); ?></strong></p>
+                <h3 class="fw-bold mb-1 view-title"><?php echo $data['name']; ?></h3>
+                <p class="text-muted"><i class="bi bi-building"></i> Provided by <strong><?php echo $data['provider']; ?></strong></p>
                 <div class="p-3 bg-light rounded-3 mt-2">
-                    <p class="mb-0 text-secondary"><?php echo nl2br(htmlspecialchars($data['description'] ?: 'No description available.')); ?></p>
+                    <p class="mb-0 text-secondary"><?php echo nl2br($data['description'] ?: 'No description available.'); ?></p>
                 </div>
             </div>
         </div>
@@ -53,11 +53,11 @@ require_once '../includes/header.php';
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted"><i class="bi bi-calendar-event me-2"></i>Deadline</span>
-                        <span class="fw-bold text-danger"><?php echo htmlspecialchars($data['deadline']); ?></span>
+                        <span class="fw-bold text-danger"><?php echo $data['deadline']; ?></span>
                     </li>
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted"><i class="bi bi-clock-history me-2"></i>Created at</span>
-                        <span class="fw-bold"><?php echo htmlspecialchars($data['created_at']); ?></span>
+                        <span class="fw-bold"><?php echo $data['created_at']; ?></span>
                     </li>
                 </ul>
             </div>
@@ -67,7 +67,7 @@ require_once '../includes/header.php';
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted">Min CGPA</span>
-                        <span class="badge bg-success rounded-pill px-3"><?php echo htmlspecialchars($data['minimum_cgpa'] ?? 'N/A'); ?> +</span>
+                        <span class="badge bg-success rounded-pill px-3"><?php echo $data['minimum_cgpa'] ?? 'N/A'; ?> +</span>
                     </li>
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted">Max Family Income</span>
@@ -76,13 +76,13 @@ require_once '../includes/header.php';
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted">Course Requirement</span>
                         <span class="fw-bold">
-                            <?php echo htmlspecialchars($data['required_course'] === 'Any' || !$data['required_course'] ? 'Open to all' : $data['required_course']); ?>
+                            <?php echo $data['required_course'] === 'Any' || !$data['required_course'] ? 'Open to all' : $data['required_course']; ?>
                         </span>
                     </li>
                     <li class="list-group-item px-0 d-flex justify-content-between align-items-center bg-transparent">
                         <span class="text-muted">State Requirement</span>
                         <span class="fw-bold">
-                            <?php echo htmlspecialchars($data['required_state'] === 'Any' || !$data['required_state'] ? 'All States' : $data['required_state']); ?>
+                            <?php echo $data['required_state'] === 'Any' || !$data['required_state'] ? 'All States' : $data['required_state']; ?>
                         </span>
                     </li>
                 </ul>

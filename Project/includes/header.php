@@ -1,6 +1,9 @@
 <?php
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+   
 }
 
 // Helper function to get the base URL relative to current location
@@ -43,14 +46,14 @@ $is_authenticated = isset($_SESSION['user_id']);
 $is_student = ($is_authenticated && $_SESSION['role'] === 'student');
 $is_admin = ($is_authenticated && $_SESSION['role'] === 'admin');
 
-if ($is_authenticated && !$is_auth_page): 
+if ($is_authenticated && !$is_auth_page) {
 ?>
 
 <!-- Top Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light top-navbar">
     <div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-            <?php if ($is_student): ?>
+            <?php if ($is_student) { ?>
                 <button class="btn btn-sm d-lg-none me-3" id="sidebarToggle" class="navbar-toggle">
                     <i class="bi bi-list icon-toggle-custom"></i>
                 </button>
@@ -60,41 +63,41 @@ if ($is_authenticated && !$is_auth_page):
                         <small class="text-muted navbar-brand-subtitle">ACADEMIC EDITORIAL</small>
                     </a>
                 </div>
-            <?php else: ?>
+            <?php } else { ?>
                 <a href="<?php echo $base; ?>admin/dashboard.php" class="text-decoration-none navbar-brand-link">
                     <h5 class="mb-0 fw-bold">🏛️ Admin Portal</h5>
                     <small class="text-muted navbar-brand-subtitle">ADMINISTRATION</small>
                 </a>
-            <?php endif; ?>
+            <?php } ?>
         </div>
 
         <div class="d-flex align-items-center gap-4">
-            <?php if ($is_student): ?>
+            <?php if ($is_student) { ?>
                 <div class="d-none d-lg-flex gap-4">
                     <a href="<?php echo $base; ?>student/dashboard.php" class="text-decoration-none fw-semibold navbar-link">Dashboard</a>
                     <a href="<?php echo $base; ?>student/results.php" class="text-decoration-none fw-semibold navbar-link">Scholarships</a>
                 </div>
-            <?php else: ?>
+            <?php } else { ?>
                 <div class="d-none d-lg-flex gap-4">
                     <a href="<?php echo $base; ?>admin/dashboard.php" class="text-decoration-none fw-semibold navbar-link">Dashboard</a>
                     <a href="<?php echo $base; ?>admin/scholarships.php" class="text-decoration-none fw-semibold navbar-link">Scholarships</a>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
 
             <div class="d-flex align-items-center gap-3">
                 <button class="btn btn-link navbar-icon-btn">
                     <i class="bi bi-bell"></i>
                 </button>
                 <div class="dropdown">
-                    <button class="btn btn-sm rounded-circle navbar-profile-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-sm rounded-circle navbar-profile-btn" data-bs-toggle="dropdown">
                         <i class="bi bi-person-fill"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end navbar-dropdown">
-                        <li><span class="dropdown-item-text small fw-bold"><?php echo htmlspecialchars($_SESSION['name']); ?></span></li>
+                        <li><span class="dropdown-item-text small fw-bold"><?php echo $_SESSION['name']; ?></span></li>
                         <li><hr class="dropdown-divider"></li>
-                        <?php if ($is_student): ?>
+                        <?php if ($is_student) { ?>
                             <li><a class="dropdown-item" href="<?php echo $base; ?>student/profile.php">Profile Settings</a></li>
-                        <?php endif; ?>
+                        <?php } ?>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>logout.php">Logout</a></li>
                     </ul>
                 </div>
@@ -106,21 +109,21 @@ if ($is_authenticated && !$is_auth_page):
 <!-- Left Sidebar -->
 <aside class="sidebar">
     <ul class="sidebar-menu">
-        <?php if ($is_student): ?>
+        <?php if ($is_student) { ?>
             <li><a href="<?php echo $base; ?>student/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Dashboard</a></li>
             <li><a href="<?php echo $base; ?>student/results.php" class="<?php echo ($current_page === 'results.php') ? 'active' : ''; ?>"><i class="bi bi-check-circle-fill"></i>Eligibility</a></li>
             <li><a href="<?php echo $base; ?>student/profile.php" class="<?php echo ($current_page === 'profile.php') ? 'active' : ''; ?>"><i class="bi bi-person-circle"></i>Profile</a></li>
-        <?php else: ?>
+        <?php } else { ?>
             <li><a href="<?php echo $base; ?>admin/dashboard.php" class="<?php echo ($current_page === 'dashboard.php') ? 'active' : ''; ?>"><i class="bi bi-house-fill"></i>Overview</a></li>
             <li><a href="<?php echo $base; ?>admin/scholarships.php" class="<?php echo ($current_page === 'scholarships.php') ? 'active' : ''; ?>"><i class="bi bi-award-fill"></i>Grants Directory</a></li>
             <li><a href="<?php echo $base; ?>admin/add_scholarship.php" class="<?php echo ($current_page === 'add_scholarship.php') ? 'active' : ''; ?>"><i class="bi bi-plus-circle-fill"></i>New Grant</a></li>
-        <?php endif; ?>
+        <?php } ?>
     </ul>
 </aside>
 
 <!-- Main Content Wrapper -->
 <div class="main-content">
 
-<?php endif; ?>
+<?php } ?>
 
 <div class="container-fluid p-0">
