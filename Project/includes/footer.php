@@ -24,21 +24,6 @@ if ($is_authenticated && !$is_auth_page):
 
 <!-- Bootstrap JS Code -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- <script>
-    // Sidebar toggle for mobile
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('show');
-        });
-        // Close sidebar when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.sidebar') && !e.target.closest('#sidebarToggle')) {
-                sidebar.classList.remove('show');
-            }
-        });
-    }
-</script> -->
+
 </body>
 </html>
