@@ -1,6 +1,4 @@
 <?php
-// ⚠️ SECURITY VULNERABILITIES DEMONSTRATION ⚠️
-// DO NOT USE IN PRODUCTION
 
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'student') {
@@ -14,9 +12,7 @@ $user_id = $_SESSION['user_id'];
 $success = '';
 $error   = '';
 
-// Save profile - VULNERABILITY: No CSRF token validation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // VULNERABILITY: No input sanitization beyond type casting
     $cgpa      = floatval($_POST['cgpa']);
     $course    = $_POST['course'];
     $state     = $_POST['state'];
@@ -28,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (empty($course) || empty($state)) {
         $error = "All fields are required.";
     } else {
-        // VULNERABILITY: SQL INJECTION - User input directly in UPDATE query
         $update_query = "UPDATE student_profiles SET cgpa='$cgpa', course='$course', state_of_origin='$state', family_income='$income' WHERE user_id='$user_id'";
         if ($conn->query($update_query) === TRUE) {
             $success = "Profile updated successfully.";
